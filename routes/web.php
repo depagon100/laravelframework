@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ModuleOneController;
+use App\Http\Controllers\ModuleTwoController;
+use App\Http\Controllers\TabsController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('layout.mod1');
+
+Route::get('/layout', function () {
+    return view('moduleOne');
 });
+
+Route::get('/layout', function () {
+    return view('moduleTwo');
+});
+
+Route::get('/moduleOne', [ModuleOneController::class, 'index']);
+
+Route::get('/saveData', [ModuleOneController::class, 'save']);
+
+Route::get('/moduleTwo', [ModuleTwoController::class, 'index']);
+
+Route::get('/saveData', [ModuleTwoController::class, 'save']);
+
+
+
+Route::get('/moduleThree', [TabsController::class, 'moduleThree']);
+Route::get('/moduleFour', [TabsController::class, 'moduleFour']);
+Route::get('/moduleFive', [TabsController::class, 'moduleFive']);
+Route::get('/moduleSix', [TabsController::class, 'moduleSix']);
