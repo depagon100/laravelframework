@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Acno;
 use App\Models\Aircon;
+use App\Models\Ccoreg;
 use App\Models\Cncno;
 use App\Models\Denrid;
 use App\Models\Dpno;
@@ -20,6 +21,7 @@ use App\Models\Smallquan;
 use App\Models\Transporter;
 use App\Models\Tsdreg;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\PDF as PDF;
 
 class ModuleOneController extends Controller
 {
@@ -29,27 +31,27 @@ class ModuleOneController extends Controller
        $dpno = Dpno::all();
        $gic = Gic::all();
        $acno = Acno::all();
-       $cnco = Cncno::all();
-       $denrid = Denrid::all();
        $dpno = Dpno::all();
+       $cncno = Cncno::all();
+       $denrid = Denrid::all();
+       $transporter = Transporter::all();
+       $tsdreg = Tsdreg::all();
+       $ccoreg = Ccoreg::all();
        $import = Import::all();
-       $operation= Operation::all();
-       $permit= Permmit::all();
-       $piccs= Piccs::all();
+       $permit = Permmit::all();
+       $smallquan = Smallquan::all();
+       $priority = Priority::all();
+       $piccs = Piccs::all();
        $pmpin = Pmpin::all();
        $pono = Pono::all();
-       $priority= Priority::all();
-       $production= Production::all();
-       $smallQuan= Smallquan::all();
-       $transporter=Transporter::all();
-       $tsdReg = Tsdreg::all();
+       $operation = Operation::all();
+       $production = Production::all();
 
-        return view('/layout.moduleOne')
-        ->with(['aircon'=>$aircon,'dpno'=>$dpno,'gic'=>$gic, 'acno'=> $acno, 'cnco'=>$cnco,
-                'denrid'=>$denrid,'import'=>$import,'operation'=>$operation, 'permit'=> $permit,
-                'piccs'=> $piccs,'pmpin'=>$pmpin,'pono'=>$pono,'priority'=>$priority,
-                'production'=>$production,'smallQuan'=>$smallQuan,'transporter'=>$transporter,
-                'tsdReg'=> $tsdReg ]);
+        return view('layout.moduleOne')
+        ->with(['aircon'=>$aircon,'dpno'=>$dpno,'gic'=>$gic, 'acno'=> $acno,'dpno'=>$dpno,'cncno'=>$cncno,'denrid'=>$denrid,
+         'transporter'=>$transporter,'tsdreg'=>$tsdreg,'ccoreg'=>$ccoreg,'import'=>$import,'permit'=>$permit,'smallquan'=>$smallquan,
+         'priority'=>$priority,'piccs'=>$piccs,'pmpin'=>$pmpin,'pono'=>$pono,'operation'=>$operation,'production'=>$production
+      ]);
 
        }
 
@@ -69,6 +71,50 @@ class ModuleOneController extends Controller
         $aircon->save();
 
 
+        $denrid  = new Denrid();
+        $denrid->traineeID = $request->input('traineeID');
+        $denrid->permit = $request->input('DENRpermit');
+        $denrid->dateIssued = $request->input('DENRdateIssued');
+        $denrid->dateExpired = $request->input('DENRdateExpired');
+        $denrid->save();
+
+        $transporter  = new Transporter();
+        $transporter->traineeID = $request->input('traineeID');
+        $transporter->permit = $request->input('Transportpermit');
+        $transporter->dateIssued = $request->input('TransportdateIssued');
+        $transporter->dateExpired = $request->input('TransportdateExpired');
+        $transporter->save();
+
+        $tsdreg  = new Tsdreg();
+        $tsdreg->traineeID = $request->input('traineeID');
+        $tsdreg->permit = $request->input('TSDpermit');
+        $tsdreg->dateIssued = $request->input('TSDdateIssued');
+        $tsdreg->dateExpired = $request->input('TSDdateExpired');
+        $tsdreg->save();
+
+        $acno  = new Acno();
+        $acno->traineeID = $request->input('traineeID');
+        $acno->permit = $request->input('ACNOPermit');
+        $acno->dateIssued = $request->input('ACNOIssued');
+        $acno->dateExpired = $request->input('ACNOExpired');
+        $acno->save();
+
+        $operation  = new Operation();
+        $operation->traineeID = $request->input('traineeID');
+        $operation->aveOPhours = $request->input('aveOPhours');
+        $operation->aveOPdays = $request->input('aveOPdays');
+        $operation->aveOPshift = $request->input('aveOPshift');
+        $operation->maxOPhours = $request->input('maxOPhours');
+        $operation->maxOPdays = $request->input('maxOPdays');
+        $operation->maxOPshift = $request->input('maxOPshift');
+        $operation->save();
+
+        $production  = new Production();
+        $production->aveProduction = $request->input('aveProduction');
+        $production->totalOutput = $request->input('totalOutput');
+        $production->totalConsumption = $request->input('totalConsumption');
+        $production->totalElectric = $request->input('totalElectric');
+        $production->save();
 
 
         $dpno = $request->input('dpno');
@@ -82,145 +128,131 @@ class ModuleOneController extends Controller
        }
 
        $cncno = $request->input('cncno');
-        for ($x=0; $x<count($cncno); $x+=3){
-           $DBcncno = new Cncno();
-           $DBcncno->traineeID = 1;
-           $DBcncno->permit = $cncno[$x];
-           $DBcncno->dateIssued = $cncno[$x+1];
-           $DBcncno->dateExpired =  $cncno[$x+2];
-           $DBcncno->save();
-       }
+       for ($x=0; $x<count($cncno); $x+=3){
+          $DBcncno = new Cncno();
+          $DBcncno->traineeID = 1;
+          $DBcncno->permit = $cncno[$x];
+          $DBcncno->dateIssued = $cncno[$x+1];
+          $DBcncno->dateExpired = $cncno[$x+2];
+          $DBcncno->save();
+      }
+      
+      
+      $ccoreg = $request->input('ccoreg');
+      for ($x=0; $x<count($ccoreg); $x+=3){
+         $DBccoreg = new Ccoreg();
+         $DBccoreg->traineeID = 1;
+         $DBccoreg->permit = $ccoreg[$x];
+         $DBccoreg->dateIssued = $ccoreg[$x+1];
+         $DBccoreg->dateExpired = $ccoreg[$x+2];
+         $DBccoreg->save();
 
-
-          $DBdenrid = new Denrid();
-          $DBdenrid->traineeID = 1;
-          $DBdenrid->permit = $request->input('DENRpermit');
-          $DBdenrid->dateIssued = $request->input('DENRdateIssued');
-          $DBdenrid->dateExpired = $request->input('DENRdateExpired');
-          $DBdenrid->save();
-
-         $DBtransporter = new Transporter();
-         $DBtransporter->traineeID = 1;
-         $DBtransporter->permit =  $request->input('Transportpermit');
-         $DBtransporter->dateIssued = $request->input('TransportdateIssued');
-         $DBtransporter->dateExpired =   $request->input('TransportdateExpired');
-         $DBtransporter->save();
-
-         $tsdReg = new Tsdreg();
-         $tsdReg->traineeID = 1;
-         $tsdReg->permit =  $request->input('TSDpermit');
-         $tsdReg->dateIssued = $request->input('TSDdateIssued');
-         $tsdReg->dateExpired =   $request->input('TSDdateExpired');
-         $tsdReg->save();
-
-         $ccoreg = $request->input('ccoreg');
-         for ($x=0; $x<count($ccoreg); $x+=3){
-            $DBcncno = new Cncno();
-            $DBcncno->traineeID = 1;
-            $DBcncno->permit = $cncno[$x];
-            $DBcncno->dateIssued = $cncno[$x+1];
-            $DBcncno->dateExpired =  $cncno[$x+2];
-            $DBcncno->save();
-        }
-
-        $import = $request->input('import');
-        for ($x=0; $x<count($import); $x+=3){
-           $DBimport = new Import();
-           $DBimport->traineeID = 1;
-           $DBimport->permit = $import[$x];
-           $DBimport->dateIssued = $import[$x+1];
-           $DBimport->dateExpired =  $import[$x+2];
-           $DBimport->save();
-       }
-
-       $permit = $request->input('permit');
-       for ($x=0; $x<count($permit); $x+=3){
-          $DBpermit = new Permmit();
-          $DBpermit->traineeID = 1;
-          $DBpermit->permit =  $permit[$x];
-          $DBpermit->dateIssued =  $permit[$x+1];
-          $DBpermit->dateExpired =   $permit[$x+2];
-          $DBpermit->save();
       }
 
-      $smallQuan = $request->input('smallQuan');
-       for ($x=0; $x<count($smallQuan); $x+=3){
-          $DBsmallquan = new Smallquan();
-          $DBsmallquan->traineeID = 1;
-          $DBsmallquan->permit =  $smallQuan[$x];
-          $DBsmallquan->dateIssued =  $smallQuan[$x+1];
-          $DBsmallquan->dateExpired =  $smallQuan[$x+2];
-          $DBsmallquan->save();
+      $import = $request->input('import');
+      for ($x=0; $x<count($import); $x+=3){
+         $DBimport = new Import();
+         $DBimport->traineeID = 1;
+         $DBimport->permit = $import[$x];
+         $DBimport->dateIssued = $import[$x+1];
+         $DBimport->dateExpired = $import[$x+2];
+         $DBimport->save();
       }
 
+      $permit = $request->input('permit');
+      for ($x=0; $x<count($permit); $x+=3){
+         $DBpermit = new Permmit();
+         $DBpermit->traineeID = 1;
+         $DBpermit->permit = $permit[$x];
+         $DBpermit->dateIssued = $permit[$x+1];
+         $DBpermit->dateExpired = $permit[$x+2];
+         $DBpermit->save();
+
+      }
+
+      $smallquan = $request->input('smallquan');
+      for ($x=0; $x<count($permit); $x+=3){
+         $DBsmallquan = new Smallquan();
+         $DBsmallquan->traineeID = 1;
+         $DBsmallquan->permit = $smallquan[$x];
+         $DBsmallquan->dateIssued = $smallquan[$x+1];
+         $DBsmallquan->dateExpired = $smallquan[$x+2];
+         $DBsmallquan->save();
+
+      }
       $priority = $request->input('priority');
-       for ($x=0; $x<count($priority); $x+=3){
-          $DBpriority = new Priority();
-          $DBpriority->traineeID = 1;
-          $DBpriority->permit =  $priority[$x];
-          $DBpriority->dateIssued =  $priority[$x+1];
-          $DBpriority->dateExpired =  $priority[$x+2];
-          $DBpriority->save();
-      }
+      for ($x=0; $x<count($priority); $x+=3){
+         $DBpriority = new Priority();
+         $DBpriority->traineeID = 1;
+         $DBpriority->permit = $priority[$x];
+         $DBpriority->dateIssued = $priority[$x+1];
+         $DBpriority->dateExpired = $priority[$x+2];
+         $DBpriority->save();
 
+      }
 
       $piccs = $request->input('piccs');
-       for ($x=0; $x<count($piccs); $x+=3){
-          $DBpiccs = new Piccs();
-          $DBpiccs->traineeID = 1;
-          $DBpiccs->permit =  $piccs[$x];
-          $DBpiccs->dateIssued =  $piccs[$x+1];
-          $DBpiccs->dateExpired =  $piccs[$x+2];
-          $DBpiccs->save();
+      for ($x=0; $x<count($piccs); $x+=3){
+         $DBpiccs = new Piccs();
+         $DBpiccs->traineeID = 1;
+         $DBpiccs->permit = $piccs[$x];
+         $DBpiccs->dateIssued = $piccs[$x+1];
+         $DBpiccs->dateExpired = $piccs[$x+2];
+         $DBpiccs->save();
+
       }
 
       $pmpin = $request->input('pmpin');
-       for ($x=0; $x<count($pmpin); $x+=3){
-          $DBpmpin = new Pmpin();
-          $DBpmpin->traineeID = 1;
-          $DBpmpin->permit =  $pmpin[$x];
-          $DBpmpin->dateIssued =  $pmpin[$x+1];
-          $DBpmpin->dateExpired =  $pmpin[$x+2];
-          $DBpmpin->save();
-      }
+      for ($x=0; $x<count($pmpin); $x+=3){
+         $DBpmpin = new Pmpin();
+         $DBpmpin->traineeID = 1;
+         $DBpmpin->permit = $pmpin[$x];
+         $DBpmpin->dateIssued = $pmpin[$x+1];
+         $DBpmpin->dateExpired = $pmpin[$x+2];
+         $DBpmpin->save();
 
-      $acno = new Acno();
-      $acno->traineeID = $request->input('traineeID');
-      $acno->permit = $request->input('ACNOPermit');
-      $acno->dateIssued = $request->input('ACNOIssued');
-      $acno->dateExpired = $request->input('ACNOExpire');
-      $acno->save();
+      }
 
       $pono = $request->input('pono');
-       for ($x=0; $x<count($pono); $x+=3){
-          $DBpono = new Pono();
-          $DBpono->traineeID = 1;
-          $DBpono->permit =  $pono[$x];
-          $DBpono->dateIssued =  $pono[$x+1];
-          $DBpono->dateExpired =  $pono[$x+2];
-          $DBpono->save();
+      for ($x=0; $x<count($pono); $x+=3){
+         $DBpono = new Pono();
+         $DBpono->traineeID = 1;
+         $DBpono->permit = $pono[$x];
+         $DBpono->dateIssued = $pono[$x+1];
+         $DBpono->dateExpired = $pono[$x+2];
+         $DBpono->save();
+
       }
+        return redirect('moduleOne');
+       }
 
-      $operation = new Operation();
-      $operation->traineeID = $request->input('traineeID');
-      $operation->aveOPhours = $request->input('aveOPhours');
-      $operation->aveOPdays = $request->input('aveOPdays');
-      $operation->aveOPshift = $request->input('aveOPshift');
-      $operation->maxOPhours = $request->input('maxOPhours');
-      $operation->maxOPdays = $request->input('maxOPdays');
-      $operation->maxOPshift = $request->input('maxOPshift');
-      $operation->save();
+       public function pdf(){
 
-      $production= new Production();
-      $production->aveProduction= $request->input('aveProduction');
-      $production->totalOutput = $request->input('totalOutput');
-      $production->totalConsumption= $request->input('totalConsumption');
-      $production->totalElectric = $request->input('totalElectric');
-      $production->traineeID = $request->input('traineeID');
+         $aircon = Aircon::get();
+         $gic = Gic::get();
+         $dpno = Dpno::get();
+         $cncno = Cncno::get();
+         $denrid = Denrid::get();
+         $transporter = Transporter::get();
+         $tsdreg = Tsdreg::get();
+         $ccoreg = Ccoreg::get();
+         $import = Import::get();
+         $permit = Permmit::get();
+         $smallquan = Smallquan::get();
+         $priority = Priority::get();
+         $piccs = Piccs::get();
+         $pmpin = Pmpin::get();
+         $acno = Acno::get();
+         $pono =Pono::get();
+         $operation = Operation::get();
+         $production =Production::get();
+         $pdf = PDF::loadView('layout.pdf1' , ['gic'=>$gic,'aircon'=>$aircon,'dpno'=>$dpno,'cncno'=>$cncno,'denrid'=>$denrid,
+         'transporter'=>$transporter,'tsdreg'=>$tsdreg,'ccoreg'=>$ccoreg,'import'=>$import,'permit'=>$permit,'smallquan'=>$smallquan,
+         'priority'=>$priority,'piccs'=>$piccs,'pmpin'=>$pmpin,'acno'=>$acno,'pono'=>$pono,'operation'=>$operation,'production'=>$production
+      
+      ]);
 
-      $production->save();
-
-        return redirect('/layout.moduleOne');
+            return $pdf->download('moduleOne.pdf1'); 
        }
 
 }

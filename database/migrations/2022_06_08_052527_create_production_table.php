@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('production', function (Blueprint $table) {
             $table->id();
+            $table->integer('aveProduction');
+            $table->string('totalOutput');
+            $table->string('totalConsumption');
+            $table->string('totalElectric');
+           
             $table->timestamps();
         });
     }

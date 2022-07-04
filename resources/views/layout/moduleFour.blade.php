@@ -23,6 +23,15 @@
 
     <div class="container card col">
 
+    <!--Delete FORM -->
+  <form method ="post" action="/deleteData">
+    @csrf 
+
+    <div class="container">
+  <div class="center">
+  <input type="submit" value ="DELETE"  name="_method" class="btn btn-lg btn-primary">
+</form>
+
    
     <form action="/saveData" post="post">
          @csrf
@@ -58,7 +67,11 @@
 
                     <div class="col">
                         <p class="p-1 mt-3  text-light" style="background-color:gray; font-size:20px ">
-                             MODULE 4: RA 8789 (AIR POLLUTION)
+                             MODULE 4: RA 8789 (AIR POLLUTION) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                             <a href="/pdf" class="btn btn-lg" ><img src="images/printpdflogo.png" height="40px" width="50px" style="backgorund-color:gray;"> EXPORT PDF</a>
             
                         </p>
                     </div>
@@ -283,13 +296,13 @@
                                         <td style="text-align:center">mg/Ncm</td>
                                     </td>
                                     <tr>
-                                        <td><input type="text" class="form-control" name=""></td>
-                                        <td><input type="date" class="form-control" name=""></td>
-                                        <td><input type="text" class="form-control" name=""></td>
-                                        <td><input type="text" class="form-control" name=""></td>
-                                        <td><input type="text" class="form-control" name=""></td>
-                                        <td><input type="text" class="form-control" name=""></td>
-                                        <td><input type="text" class="form-control" name=""></td>
+                                        <td><input type="text" class="form-control" name="detailreport[]"></td>
+                                        <td><input type="date" class="form-control" name="detailreport[]"></td>
+                                        <td><input type="text" class="form-control" name="detailreport[]"></td>
+                                        <td><input type="text" class="form-control" name="detailreport[]"></td>
+                                        <td><input type="text" class="form-control" name="detailreport[]"></td>
+                                        <td><input type="text" class="form-control" name="detailreport[]"></td>
+                                        <td><input type="text" class="form-control" name="detailreport[]"></td>
                                         <td><input type="text" class="form-control" name=""></td>
                                         <td><input type="text" class="form-control" name=""></td>
                                         <td><input type="text" class="form-control" name=""></td>

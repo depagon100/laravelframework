@@ -10,6 +10,7 @@ use App\Models\Storage;
 use App\Models\M2Transporter;
 use App\Models\Treater;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\PDF as PDF;
 
 class ModuleTwoController extends Controller
 {
@@ -22,8 +23,8 @@ class ModuleTwoController extends Controller
         $disposal = Disposal::all();
         $osisa = Osisa::all();
 
-        return view('/layout.moduleTwo');
-        -with(['hwGeneration'=>$hwGeneration,'hwDetails'=>$hwDetails,'storage'=>$storage,'m2trasporter'=>$m2transporter,
+        return view('layout.moduleTwo');
+        -with(['hwGeneration'=>$hwGeneration,'hwDetails'=>$hwDetails,'storage'=>$storage,'m2transporter'=>$m2transporter,
         'treater'=>$treater,'disposal'=>$disposal,'osisa'=>$osisa]);
     }   
 
@@ -101,7 +102,28 @@ class ModuleTwoController extends Controller
                 }
                 
 
-            return view('/layout.moduleTwo');
+            return view('layout.moduleTwo');
+    }
+
+    public function pdf (){
+
+
+
+        $hwGeneration = HwGeneration::get();
+        $hwDetails = HWDetails::get();
+        $storage = Storage::get();
+        $m2transporter = M2Transporter::get();
+        $treater = Treater::get();
+        $disposal = Disposal::get();
+        $osisa = Osisa::get();
+        $pdf = PDF::loadview('layout.pdf2',['hwGeneration'=>$hwGeneration,'hwDetails'=>$hwDetails,'storage'=>$storage,
+        'm2transporter'=>$m2transporter,'treater'=>$treater,'disposal'=>$disposal,'osisa'=>$osisa
+
+
+        ]);
+        return $pdf->download('moduleTwo.pdf'); 
+    
+
     }
 }
 

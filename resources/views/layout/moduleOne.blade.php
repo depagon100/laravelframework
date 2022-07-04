@@ -113,9 +113,13 @@
                     <p class="text-primary my-0">2. You Can now Export data on Each module by clicking "EXPORT" Link Below.</p>
                   </div>
                   
-                  <div class="col">
-                    <p class="p-1 mt-3   text-light" style="background-color:gray; font-size:20px ">
-                      MODULE 1: GENERAL INFORMATION 
+                  <div class="col" >
+                    <p class="p-1 mt-3   text-light" style="background-color:gray; font-size:20px;">
+                      MODULE 1: GENERAL INFORMATION &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <a href="/pdf" class="btn btn-lg" ><img src="images/printpdflogo.png" height="40px" width="50px" style="backgorund-color:gray;"> EXPORT PDF</a>
                     </p>
                   </div>
 
@@ -166,26 +170,13 @@
                         <td>RA 6969</td>
                         <td>A/C</td>
                         <input class="form-control" type="number" name="traineeID" value="1" hidden>
-                        <td><input class="form-control" type="text" name="ACPermit" value="{{$aircon->permit}}"></td>
-                        <td><input class="form-control" type="date" name="ACIssued" value="{{$aircon->dateIssued}}"></td>
-                        <td><input class="form-control" type="date" name="ACExpire" value="{{$aircon->dateExpired}}"></td>
+                        <td><input class="form-control" type="text" name="ACPermit" ></td>
+                        <td><input class="form-control" type="date" name="ACIssued" ></td>
+                        <td><input class="form-control" type="date" name="ACExpire" ></td>
                       </tr>
                     </tbody>
                     
-                    @if (count($dpno))
-
-                        @foreach ($dpno as $dp)
-                        <tr>
-                            <td></td>
-                            <td>DP no.</td>
-                            <td>{{$dp->permit}}</td>
-                            <td>{{$dp->dateIssued}}</td>
-                            <td>{{$dp->dateExpired}}</td>
-                        </tr>
-                        @endforeach
-
-                    @endif
-
+                   
 
                     <tbody id=dynamicAddRemove>
                         <tr>
@@ -289,9 +280,9 @@
                         <tr>
                             <td></td>
                             <td> Small Quantity Importation</td>
-                            <td><input class="form-control" type="text" name="smallQuan[]"></td>
-                            <td><input class="form-control" type="date" name="smallQuan[]"></td>
-                            <td><input class="form-control" type="date" name="smallQuan[]"></td>
+                            <td><input class="form-control" type="text" name="smallquan[]"></td>
+                            <td><input class="form-control" type="date" name="smallquan[]"></td>
+                            <td><input class="form-control" type="date" name="smallquan[]"></td>
                             <td><button type="button" name="add" id="sqi"
                                     class="btn btn-outline-primary">+</button></td>
                         </tr>

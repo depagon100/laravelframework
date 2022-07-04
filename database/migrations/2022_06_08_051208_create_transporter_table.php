@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::create('transporter', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
+            $table->integer('traineeID');
+            $table->string('permit');
+            $table->date('dateIssued');
+            $table->date('dateExpired');
             $table->timestamps();
         });
     }

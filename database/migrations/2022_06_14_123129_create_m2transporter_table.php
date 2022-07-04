@@ -15,6 +15,10 @@ return new class extends Migration
     {
         Schema::create('m2transporter', function (Blueprint $table) {
             $table->id();
+            $table->string('transpo_id');
+            $table->string('name');
+            $table->string('method');
+            $table->date('date');
             $table->timestamps();
         });
     }

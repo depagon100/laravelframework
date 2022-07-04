@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ModuleOneController;
 use App\Http\Controllers\ModuleTwoController;
+use App\Http\Controllers\ModuleThreeController;
+use App\Http\Controllers\ModuleFourController;
 use App\Http\Controllers\TabsController;
 /*
 |--------------------------------------------------------------------------
@@ -25,13 +27,25 @@ Route::get('/layout', function () {
 });
 
 Route::get('/moduleOne', [ModuleOneController::class, 'index']);
-
 Route::get('/saveData', [ModuleOneController::class, 'save']);
+Route::get('/pdf', [ModuleOneController::class, 'pdf']);
+
+
 
 Route::get('/moduleTwo', [ModuleTwoController::class, 'index']);
-
 Route::get('/saveData', [ModuleTwoController::class, 'save']);
+Route::get('/pdf', [ModuleTwoController::class, 'pdf']);
 
+
+Route::get('/moduleThree', [ModuleThreeController::class, 'index']);
+Route::get('/saveData', [ModuleThreeController::class, 'save']);
+Route::get('/pdf',[ModuleThreeController::class, 'pdf']);
+
+
+Route::get('/moduleFour',[ModuleFourController::class, 'index']);
+Route::get('/saveData',[ModuleFourController::class, 'save']);
+Route::delete('/deleteData',[ModuleFourController::class, 'delete']);
+Route::get('/pdf', [ModuleFourController::class, 'pdf']);
 
 
 Route::get('/moduleThree', [TabsController::class, 'moduleThree']);

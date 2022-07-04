@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('gic', function (Blueprint $table) {
             $table->id();
+            $table->integer('traineeID');
+            $table->string('description');
             $table->timestamps();
         });
     }

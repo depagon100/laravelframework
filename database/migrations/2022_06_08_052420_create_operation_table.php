@@ -15,6 +15,14 @@ return new class extends Migration
     {
         Schema::create('operation', function (Blueprint $table) {
             $table->id();
+            $table->integer('traineeID');
+            $table->string('aveOPhours');
+            $table->string('aveOPdays');
+            $table->string('aveOPshift');
+            $table->string('maxOPhours');
+            $table->string('maxOPdays');
+            $table->string('maxOPshift');
+            
             $table->timestamps();
         });
     }

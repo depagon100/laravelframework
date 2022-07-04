@@ -60,7 +60,11 @@
 
                         <div class="col">
                             <p class="p-1 mt-3  text-light" style="background-color:gray; font-size:20px " >
-                          MODULE 3: RA 9275
+                          MODULE 3: RA 9275&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <a href="/pdf" class="btn btn-lg" ><img src="images/printpdflogo.png" height="40px" width="50px" style="backgorund-color:gray;"> EXPORT PDF</a>
                             </p>
                         </div>
 
@@ -152,7 +156,7 @@
                                             <input class="form-control" type="number" name="traineeID" value="1" hidden>
                                             <td><input class="form-control" type="text" name="cocw1" id="cocwm1" value=" "></td>
                                             <td><input class="form-control" type="text" name="cocw2" id="cocwm2" value=" "></td>
-                                            <td><input class="form-control" type="text" name="cocw2" id="cocwm3" value=" "></td>
+                                            <td><input class="form-control" type="text" name="cocw3" id="cocwm3" value=" "></td>
                                         </tr>
                                     </tbody>    
                 
@@ -222,9 +226,9 @@
         
         
                                         <tr>
-                                            <td><input class="form-control" type="number" name="outlno[]"></td>
-                                            <td><input class="form-control" type="text"  id="lo" name="locout"></td>
-                                            <td><input class="form-control" type="text"  id="nrwb" name="namerwb"></td>
+                                            <td><input class="form-control" type="number" name="dischargeLocation[]"></td>
+                                            <td><input class="form-control" type="text"  id="lo" name="dischargeLocation[]"></td>
+                                            <td><input class="form-control" type="text"  id="nrwb" name="dischargeLocation[]"></td>
                                             <td><button type="button" name="add" id="wdladd" class="btn btn-outline-primary">+</button></td>
                                             <td></td>
                                         </tr>
@@ -253,15 +257,15 @@
         
     
                                         <tr>
-                                            <td><input class="form-control" type="number" name="outlno[]"></td>
-                                            <td><input class="form-control" type="date"  id="wcdate" name="wchardate"></td>
-                                            <td><input class="form-control" type="text"  id="nfr" name="nfrate"></td>
-                                            <td><input class="form-control" type="text"  id="bod" name="bodm"></td>
-                                            <td><input class="form-control" type="text"  id="tss" name="tssm"></td>
-                                            <td><input class="form-control" type="text"  id="clr" name="color"></td>
-                                            <td><input class="form-control" type="text"  id="phl" name="phlevel"></td>
-                                            <td><input class="form-control" type="text"  id="oag" name="oagm"></td>
-                                            <td><input class="form-control" type="text"  id="tempr" name="temprise"></td>
+                                            <td><input class="form-control" type="number" name="dreportofwaste[]"></td>
+                                            <td><input class="form-control" type="date"  id="wcdate" name="dreportofwaste[]"></td>
+                                            <td><input class="form-control" type="text"  id="nfr" name="dreportofwaste[]"></td>
+                                            <td><input class="form-control" type="text"  id="bod" name="dreportofwaste[]"></td>
+                                            <td><input class="form-control" type="text"  id="tss" name="dreportofwaste[]"></td>
+                                            <td><input class="form-control" type="text"  id="clr" name="dreportofwaste[]"></td>
+                                            <td><input class="form-control" type="text"  id="phl" name="dreportofwaste[]"></td>
+                                            <td><input class="form-control" type="text"  id="oag" name="dreportofwaste[]"></td>
+                                            <td><input class="form-control" type="text"  id="tempr" name="dreportofwaste[]"></td>
                                             <td><button type="button" name="add" id="drwcccadd" class="btn btn-outline-primary">+</button></td>
                                             <td></td>
                                         </tr>

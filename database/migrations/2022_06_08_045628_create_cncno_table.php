@@ -14,8 +14,14 @@ return new class extends Migration
     public function up()
     {
         Schema::create('cncno', function (Blueprint $table) {
+
             $table->id();
+            $table->integer('traineeID');
+            $table->string('permit');
+            $table->date('dateIssued');
+            $table->date('dateExpired');
             $table->timestamps();
+           
         });
     }
 

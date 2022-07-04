@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Ramsey\Uuid\Type\Integer;
 
 return new class extends Migration
 {
@@ -15,6 +16,10 @@ return new class extends Migration
     {
         Schema::create('aircon', function (Blueprint $table) {
             $table->id();
+            $table->integer('traineeID');
+            $table->string('permit');
+            $table->date('dateIssued');
+            $table->date('dateExpired');
             $table->timestamps();
         });
     }
