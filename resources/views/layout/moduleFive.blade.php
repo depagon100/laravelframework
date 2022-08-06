@@ -56,11 +56,14 @@
                             <p class="text-primary my-0">2. You Can now Export data on Each module by clicking "EXPORT" Link Below.</p>
                         </div>
 
-                        <div class="col">
-                            <p class="p-1 mt-3  text-light" style="background-color:gray; font-size:20px ">
-                                MODULE 5: P.D. 1586
-        
-                            </p>
+                        <div class="container">
+                            <div class="row">
+                                <p class="p-1 mt-3  text-light" style="background-color:gray; font-size:20px ">
+                                    MODULE 5: P.D. 1586
+                                    <a href="/pdf" class="btn btn-lg" style="float: right"><img src="images/printpdflogo.png" height="40px" width="50px" style="backgorund-color:gray;"> EXPORT PDF</a>
+                                </p>
+            
+                            </div>
                         </div>
 
                         <div class="container " >
@@ -479,7 +482,7 @@
         $("#OECondition").click(function () { //button name
             ++i;
             $("#OEC").append(
-                '<tr ><td ><input class="form-control" type="text" name=" "></td><td style="text-align: center"><form action=""><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="inlineRadioOptions" id="oecRadio1"value="option1"><label class="form-check-label" for="oecRadio1">Yes</label></div><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="inlineRadioOptions" id="oecRadio2"value="option2"><label class="form-check-label" for="oecRadio2">No</label></div></form></td><td><textarea class="form-control" type="text" name=" "  style="overflow:scroll; overflow: hidden visible;"></textarea></td></tr>'
+                '<tr ><td ><input class="form-control" type="text" name=" "></td><td style="text-align: center"><form action=""><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="inlineRadioOptions" id="oecRadio1" value="option1"><label class="form-check-label" for="oecRadio1">Yes</label></div><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="inlineRadioOptions" id="oecRadio2" value="option2"><label class="form-check-label" for="oecRadio2">No</label></div></form></td><td><textarea class="form-control" type="text" name=" "  style="overflow:scroll; overflow: hidden visible;"></textarea></td></tr>'
             ); //table name
         });
     </script>

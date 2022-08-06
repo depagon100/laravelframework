@@ -6,6 +6,7 @@ use App\Http\Controllers\ModuleTwoController;
 use App\Http\Controllers\ModuleThreeController;
 use App\Http\Controllers\ModuleFourController;
 use App\Http\Controllers\TabsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +28,7 @@ Route::get('/layout', function () {
 });
 
 Route::get('/moduleOne', [ModuleOneController::class, 'index']);
+
 Route::get('/saveData', [ModuleOneController::class, 'save']);
 Route::get('/pdf', [ModuleOneController::class, 'pdf']);
 

@@ -22,11 +22,12 @@ use App\Models\Transporter;
 use App\Models\Tsdreg;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\PDF as PDF;
+use Carbon\Carbon;
 
 class ModuleOneController extends Controller
 {
     public function index(){
-
+      
        $aircon = Aircon::find(1);
        $dpno = Dpno::all();
        $gic = Gic::all();
@@ -46,11 +47,13 @@ class ModuleOneController extends Controller
        $pono = Pono::all();
        $operation = Operation::all();
        $production = Production::all();
+       
+   
 
         return view('layout.moduleOne')
         ->with(['aircon'=>$aircon,'dpno'=>$dpno,'gic'=>$gic, 'acno'=> $acno,'dpno'=>$dpno,'cncno'=>$cncno,'denrid'=>$denrid,
          'transporter'=>$transporter,'tsdreg'=>$tsdreg,'ccoreg'=>$ccoreg,'import'=>$import,'permit'=>$permit,'smallquan'=>$smallquan,
-         'priority'=>$priority,'piccs'=>$piccs,'pmpin'=>$pmpin,'pono'=>$pono,'operation'=>$operation,'production'=>$production
+         'priority'=>$priority,'piccs'=>$piccs,'pmpin'=>$pmpin,'pono'=>$pono,'operation'=>$operation,'production'=>$production,
       ]);
 
        }
