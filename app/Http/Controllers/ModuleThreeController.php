@@ -155,7 +155,7 @@ class ModuleThreeController extends Controller
             $costofnew = CostOfNew::get();
             $dischargeLocation = DischargeLocation::get();
             $dreportofwaste = DreportofWaste::get();
-            $customPaper = array(0,0,800.00,800.90);
+            $customPaper = array(0,0,800.05,900.100);
             $pdf = PDF::loadview('layout.pdf3',['waterpolutiondata'=>$waterpolutiondata,'personEmployed'=>$personEmployed,
             'personEmployedCost'=>$personEmployedCost,'costofchemical'=>$costofchemical,'utilitycost'=>$utilitycost,'administrativecosts'=>$administrativecosts,
             'costofoperating'=>$costofoperating,'newinvestment'=>$newinvestment,'costofnew'=>$costofnew,'dischargeLocation'=>$dischargeLocation,

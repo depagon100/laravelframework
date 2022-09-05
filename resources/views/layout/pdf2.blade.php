@@ -158,12 +158,12 @@ tr:nth-child(even) {
 </tr>
 </tbody>
 <tbody>
-    @foreach ($m2transporter as $m2trans)
+    @foreach ($transporter as $trans)
     <tr>
-        <td>{{$m2trans->transpo_id}}</td>
-        <td>{{$m2trans->name}}</td>
-        <td>{{$m2trans->method}}</td>
-        <td>{{$m2trans->date}}</td>
+        <td>{{$trans->transpo_id}}</td>
+        <td>{{$trans->name}}</td>
+        <td>{{$trans->method}}</td>
+        <td>{{$trans->date}}</td>
     </tr>
     @endforeach
 </tbody>

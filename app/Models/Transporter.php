@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Transporter extends Model
 {
     use HasFactory;
-    protected $table = 'transporter';
+    protected $table ='transporter';
 }

@@ -58,7 +58,7 @@ tr:nth-child(even) {
                     <tbody>
                       @foreach ($aircon as $air)
                       <tr>
-                        <td>RA 6969</td>
+                        <td>RA 9275</td>
                         <td>A/C</td>
                         <td>{{$air->permit}}</td>
                         <td>{{$air->dateIssued}}</td>
@@ -112,7 +112,7 @@ tr:nth-child(even) {
                         @endforeach
                     </tbody>
 
-                   @foreach ($transporter as $trans)
+                   @foreach ($transporterReg as $trans)
 
                    <tbody>
                         <tr>
@@ -189,7 +189,6 @@ tr:nth-child(even) {
                         <tr>
                             <td></td>
                             <td>Priority Chemical List</td>
-                          
                             <td>{{$prio->permit}}</td>
                             <td>{{$prio->dateIssued}}</td>
                             <td>{{$prio->dateExpired}}</td>
@@ -263,13 +262,14 @@ tr:nth-child(even) {
                         <tbody>
                             <tr>
                                 <td>Average</td>
+                                <td></td>
                                 <td>{{$operate->aveOPhours}}</td>
                                 <td>{{$operate->aveOPdays}}</td>
                                 <td>{{$operate->aveOPshift}}</td>
                             </tr>
                         </tbody>
 
-                                <tbody>
+                            <tbody>
                             <tr>
                                 <td>Maximum</td>
                                 <td></td>

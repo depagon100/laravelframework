@@ -153,6 +153,9 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
+    'date_format' => 'Y/m/d',
+    'date_format_javascript' => 'YYYY/MM/DD',
+
 
     'providers' => [
 

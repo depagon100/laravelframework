@@ -17,6 +17,9 @@
   </script>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 
 </head>
 
@@ -46,7 +49,7 @@
                     <div class="card-body">
                       <input type="text" class="form-control mt-0" placeholder="">
                     </div>
-                    
+
                   </div>
 
                 </div>
@@ -81,7 +84,7 @@
                     </div>
 
                     <div class="col-2">
-                      
+
                       <select class="form-select" id="validationCustom04" required>
                         <option selected disabled value="">SELECT</option>
                         <option class="">1st Quarter</option>
@@ -89,7 +92,7 @@
                         <option class="">3rd Quarter</option>
                         <option class="">4th Quarter</option>
                       </select>
-                      
+
                       <div class="invalid-feedback">
                           Please select a valid region.
                       </div>
@@ -112,14 +115,14 @@
                     <p class="text-primary my-0">1. Put "N/A" for field not applicable to you.</p>
                     <p class="text-primary my-0">2. You Can now Export data on Each module by clicking "EXPORT" Link Below.</p>
                   </div>
-                  
+
                   <div class="container">
                     <div class="row">
                         <p class="p-1 mt-3  text-light" style="background-color:gray; font-size:20px ">
                             MODULE 1: GENERAL INFORMATION
                             <a href="/pdf" class="btn btn-lg" style="float: right"><img src="images/printpdflogo.png" height="40px" width="50px" style="backgorund-color:gray;"> EXPORT PDF</a>
                         </p>
-    
+
                     </div>
                 </div>
 
@@ -145,7 +148,7 @@
                     <P class="text-secondary ml-3 mt-3">Please provide the necessary revised, corrected or updated information not
                         contained in your <br> General Information Sheet.</P>
                   </div>
-                 
+
 
                   <div class="container">
                     <textarea name="description" class="form-control" id="description" cols="40" rows="10"
@@ -167,16 +170,16 @@
 
                     <tbody>
                       <tr>
-                        <td>RA 6969</td>
+                        <td>RA 9275</td>
                         <td>A/C</td>
                         <input class="form-control" type="number" name="traineeID" value="1" hidden>
-                        <td><input class="form-control" type="text" name="ACPermit" ></td>
-                        <td><input class="form-control" type="date" name="ACIssued" ></td>
-                        <td><input class="form-control" type="date" name="ACExpire" ></td>
+                        <td><input class="form-control" type="text" name="ACPermit" :value="old('ACPermit')" ></td>
+                        <td><input class="form-control" type="date" name="ACIssued" :value="old('ACIssued')" ></td>
+                        <td><input class="form-control" type="date" name="ACExpire" :value="old('ACExpire')"></td>
                       </tr>
                     </tbody>
-                    
-                   
+
+
 
                     <tbody id=dynamicAddRemove>
                         <tr>
@@ -363,10 +366,10 @@
 
                             <th></th>
                             <th></th>
-                            <div class="d-flex justify-content-start">
-                                <th>Operating hours/day</th>
-                                <th>Operating days/week</th>
-                                <th># shift/day</th>
+                            <div class="d-flex justify-content-start" >
+                                <th style="text-align: center">Operating hours/day</th>
+                                <th style="text-align: center">Operating days/week</th>
+                                <th style="text-align: center"># shift/day</th>
                             </div>
                         </thead>
 
@@ -391,7 +394,7 @@
 
                             </tr>
                         </tbody>
-                
+
                     </table>
 
                     <!-- OPERATION / PRODUCTION / QUALITY-->
@@ -426,11 +429,11 @@
                     <p class="text-secondary my-0">Attached water bills and/or electricity bills</p class="text-secondary">
                     <i class="text-secondary">Note: File name should not contain the following characters * ? " : ! @ # ; + ' | $ $ , < > \ / ( ) { } [ ]</i>
 
-                    <input class="form-control my-3" type="file" style="width:300px" multiple> 
+                    <input class="form-control my-3" type="file" style="width:300px" multiple>
                 </div>
                 </div>
 
-                
+
 
                 <!-- 13th row -->
                 <div class="container">
@@ -442,13 +445,13 @@
                 </div>
     </form>
 
-     
+
 
   </div>
 
 
 
-   
+
 
 </body>
 <style>
@@ -463,6 +466,7 @@
     color:gray;
   }
 </style>
+
 
 <!-- Script RA6969 -->
 <script type="text/javascript">
@@ -571,6 +575,7 @@
         ); //table name
     });
 </script>
+
 
 @endsection
 </html>

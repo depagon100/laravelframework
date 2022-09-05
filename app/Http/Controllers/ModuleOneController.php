@@ -9,6 +9,7 @@ use App\Models\Cncno;
 use App\Models\Denrid;
 use App\Models\Dpno;
 use App\Models\Gic;
+
 use App\Models\Import;
 use App\Models\Operation;
 use App\Models\Permmit;
@@ -18,16 +19,19 @@ use App\Models\Pono;
 use App\Models\Priority;
 use App\Models\Production;
 use App\Models\Smallquan;
-use App\Models\Transporter;
+use App\Models\TransporterReg;
 use App\Models\Tsdreg;
 use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\PDF as PDF;
 use Carbon\Carbon;
 
+
+
+
 class ModuleOneController extends Controller
 {
     public function index(){
-      
+
        $aircon = Aircon::find(1);
        $dpno = Dpno::all();
        $gic = Gic::all();
@@ -35,7 +39,7 @@ class ModuleOneController extends Controller
        $dpno = Dpno::all();
        $cncno = Cncno::all();
        $denrid = Denrid::all();
-       $transporter = Transporter::all();
+       $transporterReg = TransporterReg::all();
        $tsdreg = Tsdreg::all();
        $ccoreg = Ccoreg::all();
        $import = Import::all();
@@ -47,18 +51,25 @@ class ModuleOneController extends Controller
        $pono = Pono::all();
        $operation = Operation::all();
        $production = Production::all();
-       
-   
 
         return view('layout.moduleOne')
         ->with(['aircon'=>$aircon,'dpno'=>$dpno,'gic'=>$gic, 'acno'=> $acno,'dpno'=>$dpno,'cncno'=>$cncno,'denrid'=>$denrid,
-         'transporter'=>$transporter,'tsdreg'=>$tsdreg,'ccoreg'=>$ccoreg,'import'=>$import,'permit'=>$permit,'smallquan'=>$smallquan,
-         'priority'=>$priority,'piccs'=>$piccs,'pmpin'=>$pmpin,'pono'=>$pono,'operation'=>$operation,'production'=>$production,
+         'transporterReg'=>$transporterReg,'tsdreg'=>$tsdreg,'ccoreg'=>$ccoreg,'import'=>$import,'permit'=>$permit,'smallquan'=>$smallquan,
+         'priority'=>$priority,'piccs'=>$piccs,'pmpin'=>$pmpin,'pono'=>$pono,'operation'=>$operation,'production'=>$production
       ]);
 
        }
+/**
+ * The storage format of the model's date columns.
+ *
+ * @var string
+ */
+protected $dateFormat = 'Y-m-d';
+
 
        public function save(Request $request){
+
+
 
         $gic = new Gic();
         $gic->traineeID = $request->input('traineeID');
@@ -81,12 +92,12 @@ class ModuleOneController extends Controller
         $denrid->dateExpired = $request->input('DENRdateExpired');
         $denrid->save();
 
-        $transporter  = new Transporter();
-        $transporter->traineeID = $request->input('traineeID');
-        $transporter->permit = $request->input('Transportpermit');
-        $transporter->dateIssued = $request->input('TransportdateIssued');
-        $transporter->dateExpired = $request->input('TransportdateExpired');
-        $transporter->save();
+        $transporterReg  = new TransporterReg();
+        $transporterReg->traineeID = $request->input('traineeID');
+        $transporterReg->permit = $request->input('Transportpermit');
+        $transporterReg->dateIssued = $request->input('TransportdateIssued');
+        $transporterReg->dateExpired = $request->input('TransportdateExpired');
+        $transporterReg->save();
 
         $tsdreg  = new Tsdreg();
         $tsdreg->traineeID = $request->input('traineeID');
@@ -139,8 +150,8 @@ class ModuleOneController extends Controller
           $DBcncno->dateExpired = $cncno[$x+2];
           $DBcncno->save();
       }
-      
-      
+
+
       $ccoreg = $request->input('ccoreg');
       for ($x=0; $x<count($ccoreg); $x+=3){
          $DBccoreg = new Ccoreg();
@@ -226,8 +237,11 @@ class ModuleOneController extends Controller
          $DBpono->save();
 
       }
+
         return redirect('moduleOne');
        }
+
+
 
        public function pdf(){
 
@@ -236,7 +250,7 @@ class ModuleOneController extends Controller
          $dpno = Dpno::get();
          $cncno = Cncno::get();
          $denrid = Denrid::get();
-         $transporter = Transporter::get();
+         $transporterReg = TransporterReg::get();
          $tsdreg = Tsdreg::get();
          $ccoreg = Ccoreg::get();
          $import = Import::get();
@@ -250,12 +264,15 @@ class ModuleOneController extends Controller
          $operation = Operation::get();
          $production =Production::get();
          $pdf = PDF::loadView('layout.pdf1' , ['gic'=>$gic,'aircon'=>$aircon,'dpno'=>$dpno,'cncno'=>$cncno,'denrid'=>$denrid,
-         'transporter'=>$transporter,'tsdreg'=>$tsdreg,'ccoreg'=>$ccoreg,'import'=>$import,'permit'=>$permit,'smallquan'=>$smallquan,
+         'transporterReg'=>$transporterReg,'tsdreg'=>$tsdreg,'ccoreg'=>$ccoreg,'import'=>$import,'permit'=>$permit,'smallquan'=>$smallquan,
          'priority'=>$priority,'piccs'=>$piccs,'pmpin'=>$pmpin,'acno'=>$acno,'pono'=>$pono,'operation'=>$operation,'production'=>$production
-      
+
       ]);
 
-            return $pdf->download('moduleOne.pdf1'); 
+            return $pdf->download('moduleOne.pdf');
        }
+
+
+
 
 }

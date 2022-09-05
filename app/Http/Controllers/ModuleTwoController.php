@@ -7,10 +7,10 @@ use App\Models\HWDetails;
 use App\Models\HwGeneration;
 use App\Models\Osisa;
 use App\Models\Storage;
-use App\Models\M2Transporter;
+use App\Models\Transporter;
 use App\Models\Treater;
-use Illuminate\Http\Request;
 use Barryvdh\DomPDF\Facade\PDF as PDF;
+use Illuminate\Http\Request;
 
 class ModuleTwoController extends Controller
 {
@@ -18,13 +18,13 @@ class ModuleTwoController extends Controller
         $hwGeneration = HwGeneration::all();
         $hwDetails = HWDetails::all();
         $storage = Storage::all();
-        $m2transporter = M2Transporter::all();
+        $transporter = Transporter::all();
         $treater = Treater::all();
         $disposal = Disposal::all();
         $osisa = Osisa::all();
 
         return view('layout.moduleTwo');
-        -with(['hwGeneration'=>$hwGeneration,'hwDetails'=>$hwDetails,'storage'=>$storage,'m2transporter'=>$m2transporter,
+        -with(['hwGeneration'=>$hwGeneration,'hwDetails'=>$hwDetails,'storage'=>$storage,'trasporter'=>$transporter,
         'treater'=>$treater,'disposal'=>$disposal,'osisa'=>$osisa]);
     }   
 
@@ -63,14 +63,14 @@ class ModuleTwoController extends Controller
                     $DBstorage->method = $storage[$x+1];
                     $DBstorage->save();
                 }
-                $m2transporter = $request->input('m2transporter');
-                for ($x=0; $x<count($m2transporter); $x+=4){
-                    $DBm2transporter = new M2Transporter();
-                    $DBm2transporter->transpo_id = $m2transporter[$x];
-                    $DBm2transporter->name = $m2transporter[$x+1];
-                    $DBm2transporter->method = $m2transporter[$x+2];
-                    $DBm2transporter->date = $m2transporter[$x+3];
-                    $DBm2transporter->save();
+                $transporter = $request->input('transporter');
+                for ($x=0; $x<count($transporter); $x+=4){
+                    $DBtransporter = new Transporter();
+                    $DBtransporter->transpo_id = $transporter[$x];
+                    $DBtransporter->name = $transporter[$x+1];
+                    $DBtransporter->method = $transporter[$x+2];
+                    $DBtransporter->date = $transporter[$x+3];
+                    $DBtransporter->save();
                 }
                 $treater = $request->input('treater');
                 for ($x=0; $x<count($treater); $x+=4){
@@ -105,19 +105,19 @@ class ModuleTwoController extends Controller
             return view('layout.moduleTwo');
     }
 
-    public function pdf (){
+    public function pdf(){
 
 
 
         $hwGeneration = HwGeneration::get();
         $hwDetails = HWDetails::get();
         $storage = Storage::get();
-        $m2transporter = M2Transporter::get();
+        $transporter = Transporter::get();
         $treater = Treater::get();
         $disposal = Disposal::get();
         $osisa = Osisa::get();
         $pdf = PDF::loadview('layout.pdf2',['hwGeneration'=>$hwGeneration,'hwDetails'=>$hwDetails,'storage'=>$storage,
-        'm2transporter'=>$m2transporter,'treater'=>$treater,'disposal'=>$disposal,'osisa'=>$osisa
+        'transporter'=>$transporter,'treater'=>$treater,'disposal'=>$disposal,'osisa'=>$osisa
 
 
         ]);

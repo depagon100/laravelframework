@@ -33,6 +33,8 @@ class ModuleFourController extends Controller
         $improvement_or_modification = Improvement_or_modification::all();
         $cost_of_improvement_of_modification = Cost_of_improvement_of_modification::all();
         $detailreport = DetailReport::all();
+        $detailreport1 = DetailReport::all();
+        
         
 
         return view('layout.moduleFour');
@@ -41,12 +43,15 @@ class ModuleFourController extends Controller
         'total_cost_of_chemicals_used'=>$total_cost_of_chemicals_used,'total_consumption_of_electricity'=>$total_consumption_of_electricity,
         'administrative_and_overhead_costs'=>$administrative_and_overhead_costs,'cost_of_operating_in_house_laboratory'=>$cost_of_operating_in_house_laboratory
         ,'improvement_or_modification'=>$improvement_or_modification,'cost_of_improvement_of_modification'=>$cost_of_improvement_of_modification,
-        'detailreport'=>$detailreport
+        'detailreport'=>$detailreport,'detailreport'=>$detailreport1
     
     ]);
 
     }
 public function save(Request $request){
+
+
+    
 
     $summary1 = $request->input('summary1');
     for ($x=0; $x<count($summary1); $x+=3 ){
@@ -138,10 +143,11 @@ public function save(Request $request){
 
         $cost_of_improvement_of_modification->save();
 
+       
+        
 
 
     $detailreport = $request->input('detailreport');
-
     for ($x=0; $x<count($detailreport); $x+=7 ){
         $DBdetailreport = new DetailReport();
         $DBdetailreport->FBE_No = $detailreport[$x];
@@ -151,8 +157,11 @@ public function save(Request $request){
         $DBdetailreport->NOx_mg_Ncm = $detailreport[$x+4];
         $DBdetailreport->Particulates_mg_Ncm = $detailreport[$x+5];
         $DBdetailreport->SOx_mg_Ncm = $detailreport[$x+6];
+        
     
         $DBdetailreport->save();
+
+       
     }
     
     return view('layout.moduleFour');

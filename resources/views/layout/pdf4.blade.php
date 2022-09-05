@@ -1,4 +1,22 @@
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">                       
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>               
                         
                         
                         <div class="col">
@@ -11,12 +29,16 @@
 
                 
                     <div class="container " >
-                        <table class="table table-borderless table-hover" >
+                        <table >
                             <h3 class="mt-3 mx-2 text-success">SUMMARY OF APSE / APCF</h3>
+                        </div>
+                            </table>
 
                             <!-- SUMMARY OF APSE / APCF -->
-                        </table>
-                            <table class="w3-table w3-striped w3-border">
+
+                   
+
+                            <table >
                                 <tbody>
                                     <tr>
                                         <td style="text-align: center">Process Equipment</td>
@@ -34,7 +56,7 @@
                                 </tbody>
                             </table>
 
-                            <table class="w3-table w3-striped w3-border">
+                            <table >
                                 <tbody>
                                     
                                     <tr>
@@ -74,11 +96,11 @@
                                 </tbody>
                             </table>
 
-                            <table class="w3-table w3-striped w3-border">
+                            <table >
 
                             <tbody>
                             <tr>
-                            <table class="w3-table w3-striped w3-border">
+                            <table>
                                 <tbody>
                                     <tr>
                                         <td >Process Control Facility</td>
@@ -95,7 +117,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            <table class="table table-borderless mt-3">
+                            <table>
 
                         <thead>
                     <tr>
@@ -105,7 +127,7 @@
 
                     </table>
 
-                    <table class="w3-table w3-striped w3-border">
+                    <table >
 
                     <thead>
                      <tr>
@@ -200,7 +222,7 @@
                     </tbody>
                     </table>
 
-                    <table class="table table-borderless mt-3">
+                    <table>
 
                                 <thead>
                                     <tr>
@@ -210,7 +232,7 @@
 
                             </table>
 
-                            <table class="w3-table w3-striped w3-border">
+                            <table>
 
                                 <tbody>
                                     <tr>

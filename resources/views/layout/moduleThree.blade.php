@@ -27,7 +27,7 @@
     <div class="container card col" >
 
             
-            <form action="/saveData" post="post">
+            <form action="/saveData3" post="post">
              @csrf
             <!-- {{ csrf_field() }} -->
       <br>
@@ -62,7 +62,7 @@
                             <div class="row">
                                 <p class="p-1 mt-3  text-light" style="background-color:gray; font-size:20px ">
                                     MODULE 3: RA 9275
-                                    <a href="/pdf" class="btn btn-lg" style="float: right"><img src="images/printpdflogo.png" height="40px" width="50px" style="backgorund-color:gray;"> EXPORT PDF</a>
+                                    <a href="/pdf3" class="btn btn-lg" style="float: right"><img src="images/printpdflogo.png" height="40px" width="50px" style="backgorund-color:gray;"> EXPORT PDF</a>
                                 </p>
             
                             </div>
@@ -79,7 +79,7 @@
                                             <input class="form-control" type="number" name="traineeID" value="1" hidden>
                                             <td><input class="form-control" type="text" style="text-align:center" name="domwaste" id="dww" value=" "></td>
                 
-                                            <td>Processs wastewater (cubicmeters/day)</td>
+                                            <td>Process wastewater (cubicmeters/day)</td>
                                             <input class="form-control" type="number" name="traineeID" value="1" hidden>
                                             <td><input class="form-control" type="text" style="text-align:center" name="processwaste" id="pww" value=" "></td>
                                       
@@ -92,7 +92,7 @@
                                             <input class="form-control" type="number" name="traineeID" value="1" hidden>
                                             <td><input class="form-control" type="text" style="text-align:center" name="coolingw" id="cwmd" value=" "></td>
                                             
-                                            <td>others (cubicmeters/day)
+                                            <td>Others (cubicmeters/day)
                                             <input class="form-control" type="number" name="traineeID" value="1" hidden>
                                             <input class="form-control" type="text" style="text-align:center" name="othern" id="otn" value=" "></td>
                                             <td><input class="form-control" type="text" style="text-align:center" name="othercm" id="ocmd" value=" "></td>
@@ -245,7 +245,7 @@
                                         <tr>
                                             <th style="text-align: center">Outlet No.</th>
                                             <th style="text-align: center">Date</th>
-                                            <th style="text-align: center">NEffluent Flow Rate (m3/day)</th>
+                                            <th style="text-align: center">Effluent Flow Rate (m3/day)</th>
                                             <th style="text-align: center">BOD (mg/L)</th>   
                                             <th style="text-align: center">TSS (mg/L)</th>
                                             <th style="text-align: center">Color</th>   

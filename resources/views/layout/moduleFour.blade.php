@@ -29,11 +29,11 @@
 
     <div class="container">
   <div class="center">
-  <input type="submit" value ="DELETE"  name="_method" class="btn btn-lg btn-primary">
+
 </form>
 
    
-    <form action="/saveData" post="post">
+    <form action="/saveData4" post="post">
          @csrf
      <!-- {{ csrf_field() }} -->
          <br>
@@ -69,7 +69,7 @@
                         <div class="row">
                             <p class="p-1 mt-3  text-light" style="background-color:gray; font-size:20px ">
                                 MODULE 4: RA 8789 (AIR POLLUTION)
-                                <a href="/pdf" class="btn btn-lg" style="float: right"><img src="images/printpdflogo.png" height="40px" width="50px" style="backgorund-color:gray;"> EXPORT PDF</a>
+                                <a href="/pdf4" class="btn btn-lg" style="float: right"><img src="images/printpdflogo.png" height="40px" width="50px" style="backgorund-color:gray;"> EXPORT PDF</a>
                             </p>
         
                         </div>
@@ -282,6 +282,9 @@
                                         <td style="text-align:center">NOx (mg/Ncm)</td>
                                         <td style="text-align:center">Particulates (mg/Ncm)</td>
                                         <td style="text-align:center">SOx (mg/Ncm)</td>
+                                        <td><input type="text" class="form-control" name=""></td>
+                                        <td><input type="text" class="form-control" name=""></td>
+                                        <td><input type="text" class="form-control" name=""></td>
                                     </tr>
                                     <td>
                                         <td></td>

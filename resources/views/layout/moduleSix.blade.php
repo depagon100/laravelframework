@@ -23,9 +23,9 @@
 
 <body>
 
-    <div class="container card col" ">
+    <div class="container card col" >
 
-        <form action="/saveData" post="post">
+        <form action="/saveData6" post="post">
             @csrf
         <!-- {{ csrf_field() }} -->
             <br>
@@ -61,7 +61,7 @@
                 <div class="row">
                     <p class="p-1 mt-3  text-light" style="background-color:gray; font-size:20px ">
                         MODULE 6: OTHERS
-                        <a href="/pdf" class="btn btn-lg" style="float: right"><img src="images/printpdflogo.png" height="40px" width="50px" style="backgorund-color:gray;"> EXPORT PDF</a>
+                        <a href="/pdf6" class="btn btn-lg" style="float: right"><img src="images/printpdflogo.png" height="40px" width="50px" style="backgorund-color:gray;"> EXPORT PDF</a>
                     </p>
 
                 </div>

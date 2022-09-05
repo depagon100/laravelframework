@@ -11,19 +11,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
-  
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
     </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        
+
 </head>
 
 <body>
 
     <div class="container card col">
-        
+
           <form action="/saveData" post="post">
                @csrf
            <!-- {{ csrf_field() }} -->
@@ -32,10 +32,10 @@
                     <div class="row">
 
                         <div class="col">
-            
+
                             <h1 style="text-align: center" > POLLUTION CONTROL ASSOCIATION OF THE PHILIPPINES, INC. (PCAPI)</h1>
                             <h2 style="text-align: center">SELF- MONITORING REPORT TRAINING MODULE</h2>
-                
+
                         </div>
 
                         <div class="card col-5" style="float:right" >
@@ -62,14 +62,14 @@
                                     MODULE 5: P.D. 1586
                                     <a href="/pdf" class="btn btn-lg" style="float: right"><img src="images/printpdflogo.png" height="40px" width="50px" style="backgorund-color:gray;"> EXPORT PDF</a>
                                 </p>
-            
+
                             </div>
                         </div>
 
                         <div class="container " >
                             <table class="table table-borderless table-hover" >
                                 <h3 class="mt-3 mx-2 text-success">AMBIENT AIR QUALITY MONITORING (IF REQUIRED AS PART OF ECC CONDITIONS)</h3>
-                        
+
                                 <!-- AAQM -->
                                 <table class="w3-table w3-striped w3-border" id ="AAQM">
 
@@ -118,7 +118,7 @@
                                 </table>
 
                             </table>
-                            
+
                             <table class="table table-borderless table-hover" >
                                 <h3 class="mt-3 mx-2 text-success">AMBIENT WATER QUALITY MONITORING (IF REQUIRED AS PART OF ECC CONDITIONS)</h3>
 
@@ -211,22 +211,22 @@
 
                                             <tr >
                                                 <td ><input class="form-control" type="text" name=" "></td>
-                                            
+
                                                 <td style="text-align: center">
-                                                    <form action="">
+                                                    <form action=" ">
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="oecRadio1"
-                                                                value="option1">
+                                                                value="oecRadio1">
                                                             <label class="form-check-label" for="oecRadio1">Yes</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="oecRadio2"
-                                                                value="option2">
+                                                                value="oecRadio2">
                                                             <label class="form-check-label" for="oecRadio2">No</label>
                                                         </div>
                                                     </form>
                                                 </td>
-                                               
+
                                                 <td><textarea class="form-control" type="text" name=" "  style="overflow:scroll; overflow: hidden visible;"></textarea></td>
                                                 <td><button type="button" name="add" id="OECondition" class="btn btn-outline-primary"
                                                         style="float:right">+</button></td>
@@ -309,7 +309,7 @@
                                                 <td><input class="form-control" type="text" name=" "></td>
                                                 <td><input class="form-control" type="text" name=" "></td>
                                             </tr>
-                                            
+
                                             <tr>
                                                 <td>Average Quantity Collected (tons/ month)</td>
                                                 <td><input class="form-control" type="text" name=" "></td>
@@ -332,7 +332,7 @@
                                             </tr>
 
                                         </tbody>
-                                        
+
 
                                     </table>
 
@@ -340,15 +340,15 @@
 
                                         <tbody>
                                             <tr>
-                                                
-                                                <td style="width: 100%">Brief Description of Solid Waste Management Plan (e.g., waste 
-                                                    reduction, segregation, recycling)</td> 
-                                            
+
+                                                <td style="width: 100%">Brief Description of Solid Waste Management Plan (e.g., waste
+                                                    reduction, segregation, recycling)</td>
+
                                                 </div>
                                             </tr>
-                                            
+
                                             <tr>
-                                                <td><textarea class="form-control" type="text" name=" "  style="overflow:scroll; overflow: hidden visible; width: 85%;"></textarea></td>
+                                                <td><textarea class="form-control" type="text" name=" "  style="overflow:scroll; overflow: hidden visible; width: 100%;"></textarea></td>
                                             </tr>
                                         </tbody>
 
@@ -357,7 +357,7 @@
                             </table>
                         </div>
 
-            
+
 <!-- 13th row -->
 <div class="container">
     <div class="col mb-3" >
@@ -371,7 +371,7 @@
 
 
 
-            </form>          
+            </form>
     </div>
 
 
@@ -441,14 +441,14 @@
       background: red;
       border-color: red;
     }
- 
-    
+
+
     @media only screen and (max-width: 700px) {
       section {
         flex-direction: column;
       }
     }
-    
+
     </style>
 
 
@@ -471,7 +471,7 @@
         $("#AWQMonitoring").click(function () { //button name
             ++i;
             $("#AWQM").append(
-                '<tr ><td><input class="form-control" type="text" name=" "></td><td><input class="form-control" type="date" name=" "></td><td><input class="form-control" type="text" name=" "></td><td><input class="form-control" type="text" name=" "></td><td><input class="form-control" type="text" name=" "></td><td><input class="form-control" type="text" name=" "></td><td><input class="form-control" type="text" name=" "></td><td><input class="form-control" type="text" name=" "></td><td><input class="form-control" type="text" name=" "></td></tr>'
+                '<tr><td><input class="form-control" type="text" name=" "></td><td><input class="form-control" type="date" name=" "></td><td><input class="form-control" type="text" name=" "></td><td><input class="form-control" type="text" name=" "></td><td><input class="form-control" type="text" name=" "></td><td><input class="form-control" type="text" name=" "></td><td><input class="form-control" type="text" name=" "></td><td><input class="form-control" type="text" name=" "></td><td><input class="form-control" type="text" name=" "></td></tr>'
             ); //table name
         });
     </script>
@@ -482,7 +482,7 @@
         $("#OECondition").click(function () { //button name
             ++i;
             $("#OEC").append(
-                '<tr ><td ><input class="form-control" type="text" name=" "></td><td style="text-align: center"><form action=""><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="inlineRadioOptions" id="oecRadio1" value="option1"><label class="form-check-label" for="oecRadio1">Yes</label></div><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="inlineRadioOptions" id="oecRadio2" value="option2"><label class="form-check-label" for="oecRadio2">No</label></div></form></td><td><textarea class="form-control" type="text" name=" "  style="overflow:scroll; overflow: hidden visible;"></textarea></td></tr>'
+                '<tr ><td ><input class="form-control" type="text" name=" "></td><td style="text-align: center"><form action=""><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="inlineRadioOptions" id="oecRadio1" value="oecRadio1"><label class="form-check-label" for="oecRadio1">Yes</label></div><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="inlineRadioOptions" id="oecRadio2" value="oecRadio2"><label class="form-check-label" for="oecRadio2">No</label></div></form></td><td><textarea class="form-control" type="text" name=" " style="overflow:scroll; overflow: hidden visible;"></textarea></td></tr>'
             ); //table name
         });
     </script>
