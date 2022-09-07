@@ -23,8 +23,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/module1', function () {
-    return view('module1');
+Route::get('/radio', function () {
+    return view('layout.radio');
 });
 
 /* Module One Controller */
