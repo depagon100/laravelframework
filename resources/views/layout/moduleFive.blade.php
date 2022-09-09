@@ -109,13 +109,14 @@
                                             <td><input class="form-control" type="text" name=" "></td>
                                             <td><input class="form-control" type="text" name=" "></td>
                                             <td><input class="form-control" type="text" name=" "></td>
-                                            <td><button type="button" name="add" id="AAQMonitoring" class="btn btn-outline-primary"
-                                                style="float:right">+</button></td>
+
                                         </tr>
 
                                     </tbody>
 
                                 </table>
+
+                                <td><button type="button" name="add" id="AAQMonitoring" class="btn btn-outline-primary mt-3">+</button></td>
 
                             </table>
 
@@ -186,13 +187,13 @@
                                                 <td><input class="form-control" type="text" name=" "></td>
                                                 <td><input class="form-control" type="text" name=" "></td>
                                                 <td><input class="form-control" type="text" name=" "></td>
-                                                <td><button type="button" name="add" id="AWQMonitoring" class="btn btn-outline-primary"
-                                                    style="float:right">+</button></td>
+
                                             </tr>
 
                                         </tbody>
 
                                     </table>
+                                    <td><button type="button" name="add" id="AWQMonitoring" class="btn btn-outline-primary mt-3">+</button></td>
                             </table>
 
                             <table class="table table-borderless table-hover" >
@@ -210,31 +211,34 @@
                                             </tr>
 
                                             <tr >
-                                                <td ><input class="form-control" type="text" name=" "></td>
 
+                                                <div class="form-group">
+                                                <td ><input class="form-control" type="text" name=" "></td>
+                                                <form action="">
                                                 <td style="text-align: center">
-                                                    <form action="">
+
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="oecRadio1"
-                                                                value="oecRadio1">
+                                                                value="Yes">
                                                             <label class="form-check-label" for="oecRadio1">Yes</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="oecRadio2"
-                                                                value="oecRadio2">
+                                                                value="No">
                                                             <label class="form-check-label" for="oecRadio2">No</label>
                                                         </div>
-                                                    </form>
-                                                </td>
 
+                                                </td>
+                                                </form>
                                                 <td><textarea class="form-control" type="text" name=" "  style="overflow:scroll; overflow: hidden visible;"></textarea></td>
-                                                <td><button type="button" name="add" id="OECondition" class="btn btn-outline-primary"
-                                                        style="float:right">+</button></td>
+                                                </div>
                                             </tr>
 
                                         </tbody>
 
                                     </table>
+
+                                    <td><button type="button" name="add" id="OECondition" class="btn btn-outline-primary" style="margin: 0.5%">+</button></td>
 
                             </table>
 
@@ -253,31 +257,34 @@
                                             </tr>
 
                                             <tr>
+                                                <div class="form-group">
                                                 <td><input class="form-control" type="text" name=" "></td>
-
+                                                <form action="">
                                                 <td style="text-align: center">
-                                                    <form action="">
+
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="emppRadio1"
-                                                                value="option1">
+                                                                value="Yes">
                                                             <label class="form-check-label" for="emppRadio1">Yes</label>
                                                         </div>
                                                         <div class="form-check form-check-inline">
                                                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="emppRadio2"
-                                                                value="option2">
+                                                                value="No">
                                                             <label class="form-check-label" for="emppRadio2">No</label>
                                                         </div>
-                                                    </form>
-                                                </td>
 
+                                                </td>
+                                                </form>
                                                 <td><textarea class="form-control" type="text" name=" "  style="overflow:scroll; overflow: hidden visible;"></textarea></td>
-                                                <td><button type="button" name="add" id="EMPlanProgram" class="btn btn-outline-primary"
-                                                style="float:right">+</button></td>
+
+                                                </div>
                                             </tr>
 
                                         </tbody>
 
                                     </table>
+
+                                    <td><button type="button" name="add" id="EMPlanProgram" class="btn btn-outline-primary" style="margin: 0.5%">+</button></td>
 
                             </table>
 
@@ -388,65 +395,33 @@
       color:gray;
     }
 
-
-    input[type="radio"] {
-      display: none;
-      &:not(:disabled) ~ label {
-        cursor: pointer;
-      }
-      &:disabled ~ label {
-        color: hsla(150, 5%, 75%, 1);
-        border-color: hsla(150, 5%, 75%, 1);
-        box-shadow: none;
-        cursor: not-allowed;
-      }
-    }
-    label {
-      height: 100%;
-      display: block;
-      background: white;
-      border: 2px solid hsla(150, 75%, 50%, 1);
-      border-radius: 20px;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      //margin: 1rem;
-      text-align: center;
-      box-shadow: 0px 3px 10px -2px hsla(150, 5%, 65%, 0.5);
-      position: relative;
-    }
-    input[type="radio"]:checked + label {
-      background: hsla(150, 75%, 50%, 1);
-      color: hsla(215, 0%, 100%, 1);
-      box-shadow: 0px 0px 20px hsla(150, 100%, 50%, 0.75);
-      &::after {
-        color: hsla(215, 5%, 25%, 1);
-        font-family: FontAwesome;
-        border: 2px solid hsla(150, 75%, 45%, 1);
-        content: "\f00c";
-        font-size: 24px;
-        position: absolute;
-        top: -25px;
-        left: 50%;
-        transform: translateX(-50%);
-        height: 50px;
+    input[type='radio'] {
+        -webkit-appearance: none;
         width: 50px;
-        line-height: 50px;
-        text-align: center;
+        height: 50px;
         border-radius: 50%;
-        background: white;
-        box-shadow: 0px 2px 5px -2px hsla(0, 0%, 0%, 0.25);
-      }
-    }
-    input[type="radio"]#control_05:checked + label {
-      background: red;
-      border-color: red;
-    }
+        overflow: hidden;
 
 
-    @media only screen and (max-width: 700px) {
-      section {
-        flex-direction: column;
-      }
+    }
+
+    input[type='radio']:hover {
+        box-shadow: 0 0 5px 0px green inset;
+
+    }
+
+    input[type='radio']:after {
+        content: '';
+        width: 60%;
+        height: 60%;
+        margin: 20% auto;
+
+    }
+
+    input[type='radio']:checked:after {
+        background: green;
+        border-radius: 50%;
+
     }
 
     </style>
@@ -477,26 +452,26 @@
     </script>
 
 <!-- SCRIPT FOR OTHER ECC CONDITIONS -->
-    <script type="text/javascript">
-        var i = 0;
-        $("#OECondition").click(function () { //button name
-            ++i;
-            $("#OEC").append(
-                '<tr ><td ><input class="form-control" type="text" name=" "></td><td style="text-align: center"><form action=""><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="inlineRadioOptions" id="oecRadio1" value="oecRadio1"><label class="form-check-label" for="oecRadio1">Yes</label></div><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="inlineRadioOptions" id="oecRadio2" value="oecRadio2"><label class="form-check-label" for="oecRadio2">No</label></div></form></td><td><textarea class="form-control" type="text" name=" " style="overflow:scroll; overflow: hidden visible;"></textarea></td></tr>'
-            ); //table name
-        });
-    </script>
+<script type="text/javascript">
+    var i = 0;
+    $("#OECondition").click(function () { //button name
+        ++i;
+        $("#OEC").append(
+            '<tr ><div class="form-group"><td ><input class="form-control" type="text" name=" "></td><td style="text-align: center"><form action=""><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="inlineRadioOptions" id="oecRadio1" value="Yes"><label class="form-check-label" for="oecRadio1">Yes</label></div><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="inlineRadioOptions" id="oecRadio2" value="No"><label class="form-check-label" for="oecRadio2">No</label></div></form></td><td><textarea class="form-control" type="text" name=" " style="overflow:scroll; overflow: hidden visible;"></textarea></td></div></tr>'
+        ); //table name
+    });
+</script>
 
 <!-- SCRIPT FOR ENVIRONMENTAL MANAGEMENT PLAN/ PROGRAM -->
-    <script type="text/javascript">
-        var i = 0;
-        $("#EMPlanProgram").click(function () { //button name
-            ++i;
-            $("#EMPP").append(
-                '<tr><td><input class="form-control" type="text" name=" "></td><td style="text-align: center"><form action=""><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="inlineRadioOptions" id="emppRadio1" value="option1"><label class="form-check-label" for="emppRadio1">Yes</label></div><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="inlineRadioOptions" id="emppRadio2" value="option2"><label class="form-check-label" for="emppRadio2">No</label></div></form></td><td><textarea class="form-control" type="text" name=" "  style="overflow:scroll; overflow: hidden visible;"></textarea></td></tr>'
-            ); //table name
-        });
-    </script>
+<script type="text/javascript">
+    var i = 0;
+    $("#EMPlanProgram").click(function () { //button name
+        ++i;
+        $("#EMPP").append(
+            '<tr><div class="form-group"><td><input class="form-control" type="text" name=" "></td><td style="text-align: center"><form action=""><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="inlineRadioOptions" id="emppRadio1" value="Yes"><label class="form-check-label" for="emppRadio1">Yes</label></div><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="inlineRadioOptions" id="emppRadio2" value="No"><label class="form-check-label" for="emppRadio2">No</label></div></form></td><td><textarea class="form-control" type="text" name=" "  style="overflow:scroll; overflow: hidden visible;"></textarea></td></div></tr>'
+        ); //table name
+    });
+</script>
 
 @endsection
 </html>
