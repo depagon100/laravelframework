@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-</head>  
+</head>
 <body>
 
 <style>
@@ -27,8 +27,8 @@
     background-color: #2f87d4;
     border-radius: 5px;
     }
-    
-    li { 
+
+    li {
     list-style-type: none;
     color: #2f87d4;
     background-color: #dae2e8;
@@ -48,49 +48,49 @@
 <div class="container mt-2">
 <nav class="navbar navbar-expand-lg">
 
-      
+
       <form class="d-flex">
         <li class="nav-item">
             <a class="nav-link" href="moduleOne">
                 <small>Module 1: General Info</small>
             </a>
-        </li> 
+        </li>
 
-        <li class="nav-item">
-            <a class="nav-link" href="moduleTwo">
+        <li class="nav-item" >
+            <a class="nav-link " href="moduleTwo" >
                 <small>Module 2: RA 6969</small>
             </a>
-        </li> 
+        </li>
 
         <li class="nav-item">
             <a class="nav-link" href="moduleThree">
                 <small>Module 3: RA 9275</small>
             </a>
-        </li> 
+        </li>
 
         <li class="nav-item">
             <a class="nav-link" href="moduleFour">
                 <small>Module 4: RA 8749</small>
             </a>
-        </li> 
+        </li>
 
         <li class="nav-item">
             <a class="nav-link" href="moduleFive">
                 <small>Module 5: RA 1586</small>
             </a>
-        </li> 
+        </li>
 
         <li class="nav-item">
             <a class="nav-link" href="moduleSix">
                 <small>Module 6: Others</small>
             </a>
-        </li> 
+        </li>
       </form>
 
-      
+
     </div> <!-- collapse navbar-collapse -->
   </div> <!-- container -->
-</nav> 
+</nav>
 
 
 

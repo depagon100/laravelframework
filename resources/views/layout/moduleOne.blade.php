@@ -19,7 +19,8 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
 
 </head>
 
@@ -152,7 +153,7 @@
 
                   <div class="container">
                     <textarea name="description" class="form-control" id="description" cols="40" rows="10"
-                        style="overflow:scroll; overflow-x:hidden"></textarea>
+                        style="overflow:scroll; overflow-x:hidden" value="{{ old('description') }}"></textarea>
                   </div>
 
                   <table class="table table-borderless table-hover" >
@@ -173,9 +174,9 @@
                         <td>RA 9275</td>
                         <td>A/C</td>
                         <input class="form-control" type="number" name="traineeID" value="1" hidden>
-                        <td><input class="form-control" type="text" name="ACPermit" :value="old('ACPermit')" ></td>
-                        <td><input class="form-control" type="date" name="ACIssued" :value="old('ACIssued')" ></td>
-                        <td><input class="form-control" type="date" name="ACExpire" :value="old('ACExpire')"></td>
+                        <td><input class="form-control" type="text" name="ACPermit" value="{{ old('ACPermit') }}" ></td>
+                        <td><input class="form-control"  type="date" name="ACIssued"  value="{{ old('ACIssued') }}" ></td>
+                        <td><input class="form-control" type="date" name="ACExpire" value="{{ old('ACExpire') }}"></td>
                       </tr>
                     </tbody>
 
@@ -185,34 +186,42 @@
                         <tr>
                             <td></td>
                             <td>DP no.</td>
-                            <td><input class="form-control" type="text" name="dpno[]"></td>
-                            <td><input class="form-control" type="date" name="dpno[]"></td>
-                            <td><input class="form-control" type="date" name="dpno[]"></td>
-                            <td><button type="button" name="add" id="dynamic-ar"
-                                    class="btn btn-outline-primary">+</button></td>
+                            <td><input class="form-control" type="text" name="dpno[]" value="{{ old('dpno[]') }}"></td>
+                            <td><input class="form-control" type="date" name="dpno[]" value="{{ old('dpno[]') }}"></td>
+                            <td><input class="form-control" type="date" name="dpno[]" value="{{ old('dpno[]') }}"></td>
+
                         </tr>
+
+
                     </tbody>
+                    <td></td>
+                    <td></td>
+                    <td><button type="button" name="add" id="dynamic-ar"
+                        class="btn btn-outline-primary" >+</button></td>
 
                     <tbody id=pd>
                         <tr>
                             <td>PD 1586</td>
                             <td>ECC/CNC no.</td>
-                            <td><input class="form-control" type="text" name="cncno[]"></td>
-                            <td><input class="form-control" type="date" name="cncno[]"></td>
-                            <td><input class="form-control" type="date" name="cncno[]"></td>
-                            <td><button type="button" name="add" id="ECC"
-                                    class="btn btn-outline-primary">+</button></td>
+                            <td><input class="form-control" type="text" name="cncno[]" value="{{ old('cncno[]') }}"></td>
+                            <td><input class="form-control" type="date" name="cncno[]" value="{{ old('cncno[]') }}"></td>
+                            <td><input class="form-control" type="date" name="cncno[]" value="{{ old('cncno[]') }}"></td>
+
                         </tr>
                     </tbody>
+                    <td></td>
+                    <td></td>
+                    <td><button type="button" name="add" id="ECC"
+                        class="btn btn-outline-primary">+</button></td>
 
                     <!-- DENR REG -->
                     <tbody id="reg">
                         <tr>
                             <td>RA 6969</td>
                             <td>DENR Registry ID</td>
-                            <td><input class="form-control" type="text" name="DENRpermit"></td>
-                            <td><input class="form-control" type="date" name="DENRdateIssued"></td>
-                            <td><input class="form-control" type="date" name="DENRdateExpired"></td>
+                            <td><input class="form-control" type="text" name="DENRpermit" value="{{ old('DENRpermit') }}"></td>
+                            <td><input class="form-control" type="date" name="DENRdateIssued" value="{{ old('DENRdateIssued') }}"></td>
+                            <td><input class="form-control" type="date" name="DENRdateExpired" value="{{ old('DENRdateExpired') }}"></td>
 
                         </tr>
                     </tbody>
@@ -222,9 +231,9 @@
                         <tr>
                             <td></td>
                             <td>Transporter Registration</td>
-                            <td><input class="form-control" type="text" name="Transportpermit"></td>
-                            <td><input class="form-control" type="date" name="TransportdateIssued"></td>
-                            <td><input class="form-control" type="date" name="TransportdateExpired"></td>
+                            <td><input class="form-control" type="text" name="Transportpermit" value="{{ old('Transportpermit') }}"></td>
+                            <td><input class="form-control" type="date" name="TransportdateIssued" value="{{ old('TransportdateIssued') }}"></td>
+                            <td><input class="form-control" type="date" name="TransportdateExpired" value="{{ old('TransportdateExpired') }}"></td>
                         </tr>
                     </tbody>
 
@@ -233,9 +242,9 @@
                         <tr>
                             <td></td>
                             <td>TSD Registration</td>
-                            <td><input class="form-control" type="text" name="TSDpermit"></td>
-                            <td><input class="form-control" type="date" name="TSDdateIssued"></td>
-                            <td><input class="form-control" type="date" name="TSDdateExpired"></td>
+                            <td><input class="form-control" type="text" name="TSDpermit" value="{{ old('TSDpermit') }}"></td>
+                            <td><input class="form-control" type="date" name="TSDdateIssued" value="{{ old('TSDdateIssued') }}"></td>
+                            <td><input class="form-control" type="date" name="TSDdateExpired" value="{{ old('TSDdateExpired') }}"></td>
                         </tr>
                     </tbody>
 
@@ -244,100 +253,121 @@
                         <tr>
                             <td></td>
                             <td>CCO Registration</td>
-                            <td><input class="form-control" type="text" name="ccoreg[]"></td>
-                            <td><input class="form-control" type="date" name="ccoreg[]"></td>
-                            <td><input class="form-control" type="date" name="ccoreg[]"></td>
-                            <td><button type="button" name="add" id="ccoreg"
-                                    class="btn btn-outline-primary">+</button></td>
+                            <td><input class="form-control" type="text" name="ccoreg[]" value="{{ old('ccoreg[]') }}"></td>
+                            <td><input class="form-control" type="date" name="ccoreg[]" value="{{ old('ccoreg[]') }}"></td>
+                            <td><input class="form-control" type="date" name="ccoreg[]" value="{{ old('ccoreg[]') }}"></td>
+
                         </tr>
                     </tbody>
+                    <td></td>
+                    <td></td>
+                    <td><button type="button" name="add" id="ccoreg"
+                        class="btn btn-outline-primary">+</button></td>
 
                     <!-- Importation Clearance number -->
                     <tbody id="importation">
                         <tr>
                             <td></td>
                             <td>Importation Clearance No.</td>
-                            <td><input class="form-control" type="text" name="import[]"></td>
-                            <td><input class="form-control" type="date" name="import[]"></td>
-                            <td><input class="form-control" type="date" name="import[]"></td>
-                            <td><button type="button" name="add" id="imp"
-                                    class="btn btn-outline-primary">+</button></td>
+                            <td><input class="form-control" type="text" name="import[]" value="{{ old('import[]') }}"></td>
+                            <td><input class="form-control" type="date" name="import[]" value="{{ old('import[]') }}"></td>
+                            <td><input class="form-control" type="date" name="import[]" value="{{ old('import[]') }}"></td>
+
                         </tr>
                     </tbody>
+                    <td></td>
+                    <td></td>
+                    <td><button type="button" name="add" id="imp"
+                        class="btn btn-outline-primary">+</button></td>
 
                     <!-- Permit to Transport -->
                     <tbody id="permit">
                         <tr>
                             <td></td>
                             <td>Permit to Transport</td>
-                            <td><input class="form-control" type="text" name="permit[]"></td>
-                            <td><input class="form-control" type="date" name="permit[]"></td>
-                            <td><input class="form-control" type="date" name="permit[]"></td>
-                            <td><button type="button" name="add" id="ptt"
-                                    class="btn btn-outline-primary">+</button></td>
+                            <td><input class="form-control" type="text" name="permit[]" value="{{ old('permit[]') }}"></td>
+                            <td><input class="form-control" type="date" name="permit[]" value="{{ old('permit[]') }}"></td>
+                            <td><input class="form-control" type="date" name="permit[]" value="{{ old('permit[]') }}"></td>
+
                         </tr>
                     </tbody>
+                    <td></td>
+                    <td></td>
+                    <td><button type="button" name="add" id="ptt"
+                        class="btn btn-outline-primary">+</button></td>
 
                     <!-- Small Quantity Importation -->
                     <tbody id="smallq">
                         <tr>
                             <td></td>
                             <td> Small Quantity Importation</td>
-                            <td><input class="form-control" type="text" name="smallquan[]"></td>
-                            <td><input class="form-control" type="date" name="smallquan[]"></td>
-                            <td><input class="form-control" type="date" name="smallquan[]"></td>
-                            <td><button type="button" name="add" id="sqi"
-                                    class="btn btn-outline-primary">+</button></td>
+                            <td><input class="form-control" type="text" name="smallquan[]" value="{{ old('smallquan[]') }}"></td>
+                            <td><input class="form-control" type="date" name="smallquan[]" value="{{ old('smallquan[]') }}"></td>
+                            <td><input class="form-control" type="date" name="smallquan[]" value="{{ old('smallquan[]') }}"></td>
+
                         </tr>
                     </tbody>
+                    <td></td>
+                    <td></td>
+                    <td><button type="button" name="add" id="sqi"
+                        class="btn btn-outline-primary">+</button></td>
 
                     <!-- Priority Chemical list -->
                     <tbody id="prio">
                         <tr>
                             <td></td>
                             <td>Priority Chemical List</td>
-                            <td><input class="form-control" type="text" name="priority[]"></td>
-                            <td><input class="form-control" type="date" name="priority[]"></td>
-                            <td><input class="form-control" type="date" name="priority[]"></td>
-                            <td><button type="button" name="add" id="priochem"
-                                    class="btn btn-outline-primary">+</button></td>
+                            <td><input class="form-control" type="text" name="priority[]" value="{{ old('priority[]') }}"></td>
+                            <td><input class="form-control" type="date" name="priority[]" value="{{ old('priority[]') }}"></td>
+                            <td><input class="form-control" type="date" name="priority[]" value="{{ old('priority[]') }}"></td>
+
                         </tr>
                     </tbody>
+                    <td></td>
+                    <td></td>
+                    <td><button type="button" name="add" id="priochem"
+                        class="btn btn-outline-primary">+</button></td>
 
                     <!-- PICCS -->
                     <tbody id="piccs">
                         <tr>
                             <td></td>
                             <td>PICCS</td>
-                            <td><input class="form-control" type="text" name="piccs[]"></td>
-                            <td><input class="form-control" type="date" name="piccs[]"></td>
-                            <td><input class="form-control" type="date" name="piccs[]"></td>
-                            <td><button type="button" name="add" id="pccs"
-                                    class="btn btn-outline-primary">+</button></td>
+                            <td><input class="form-control" type="text" name="piccs[]" value="{{ old('piccs[]') }}"></td>
+                            <td><input class="form-control" type="date" name="piccs[]" value="{{ old('piccs[]') }}"></td>
+                            <td><input class="form-control" type="date" name="piccs[]" value="{{ old('piccs[]') }}"></td>
+
                         </tr>
                     </tbody>
+                    <td></td>
+                    <td></td>
+                    <td><button type="button" name="add" id="pccs"
+                        class="btn btn-outline-primary">+</button></td>
 
                     <!-- PMPIN -->
                     <tbody id="pmpin">
                         <tr>
                             <td></td>
                             <td>PMPIN</td>
-                            <td><input class="form-control" type="text" name="pmpin[]"></td>
-                            <td><input class="form-control" type="date" name="pmpin[]"></td>
-                            <td><input class="form-control" type="date" name="pmpin[]"></td>
-                            <td><button type="button" name="add" id="pin"
-                                    class="btn btn-outline-primary">+</button></td>
+                            <td><input class="form-control" type="text" name="pmpin[]" value="{{ old('pmpin[]') }}"></td>
+                            <td><input class="form-control" type="date" name="pmpin[]" value="{{ old('pmpin[]') }}"></td>
+                            <td><input class="form-control" type="date" name="pmpin[]" value="{{ old('pmpin[]') }}"></td>
+
                         </tr>
                     </tbody>
+                    <td></td>
+                    <td></td>
+                    <td><button type="button" name="add" id="pin"
+                        class="btn btn-outline-primary">+</button></td>
 
                     <!-- ACno2 -->
                     <tbody>
                         <tr>
                             <td>RA 8749</td>
                             <td>A/C no.</td>
-                            <td><input class="form-control" type="text" name="ACNOPermit"></td>
-                            <td><input class="form-control" type="date" name="ACNOIssued"></td>
-                            <td><input class="form-control" type="date" name="ACNOExpired"></td>
+                            <td><input class="form-control" type="text" name="ACNOPermit" value="{{ old('ACNOPermit') }}"></td>
+                            <td><input class="form-control" type="date" name="ACNOIssued" value="{{ old('ACNOIssued') }}"></td>
+                            <td><input class="form-control" type="date" name="ACNOExpired" value="{{ old('ACNOExpired') }}"></td>
 
                         </tr>
                     </tbody>
@@ -347,13 +377,16 @@
                         <tr>
                             <td></td>
                             <td>PO No.</td>
-                            <td><input class="form-control" type="text" name="pono[]"></td>
-                            <td><input class="form-control" type="date" name="pono[]"></td>
-                            <td><input class="form-control" type="date" name="pono[]"></td>
-                            <td><button type="button" name="add" id="ponum"
-                                    class="btn btn-outline-primary">+</button></td>
+                            <td><input class="form-control" type="text" name="pono[]" value="{{ old('pono[]') }}"></td>
+                            <td><input class="form-control" type="date" name="pono[]" value="{{ old('pono[]') }}"></td>
+                            <td><input class="form-control" type="date" name="pono[]" value="{{ old('pono[]') }}"></td>
+
                         </tr>
                     </tbody>
+                    <td></td>
+                    <td></td>
+                    <td><button type="button" name="add" id="ponum"
+                        class="btn btn-outline-primary">+</button></td>
 
 
                   </table>
@@ -377,9 +410,9 @@
                             <tr>
                                 <td>Average</td>
                                 <td></td>
-                                <td><input class="form-control" type="text" name="aveOPhours" value="10"></td>
-                                <td><input class="form-control" type="text" name="aveOPdays" value="5"></td>
-                                <td><input class="form-control" type="text" name="aveOPshift" value="1"></td>
+                                <td><input class="form-control" type="text" name="aveOPhours" value="{{ old('aveOPhours') }}"></td>
+                                <td><input class="form-control" type="text" name="aveOPdays" value="{{ old('aveOPdays') }}"></td>
+                                <td><input class="form-control" type="text" name="aveOPshift" value="{{ old('aveOPshift') }}"></td>
 
                             </tr>
                         </tbody>
@@ -388,9 +421,9 @@
                             <tr>
                                 <td>Maximum</td>
                                 <td></td>
-                                <td><input class="form-control" type="text" name="maxOPhours"></td>
-                                <td><input class="form-control" type="text" name="maxOPdays"></td>
-                                <td><input class="form-control" type="text" name="maxOPshift"></td>
+                                <td><input class="form-control" type="text" name="maxOPhours" value="{{ old('maxOPhours') }}"></td>
+                                <td><input class="form-control" type="text" name="maxOPdays" value="{{ old('maxOPdays') }}"></td>
+                                <td><input class="form-control" type="text" name="maxOPshift" value="{{ old('maxOPshift') }}"></td>
 
                             </tr>
                         </tbody>
@@ -404,18 +437,18 @@
                             <tbody>
                                 <tr>
                                     <td>Average Daily Production Output</td>
-                                    <td><input class="form-control" type="text" name="aveProduction"></td>
+                                    <td><input class="form-control" type="text" name="aveProduction" value="{{ old('aveProduction') }}"></td>
                                     <td>Total Output This Quarter</td>
-                                    <td><input class="form-control" type="text" name="totalOutput"></td>
+                                    <td><input class="form-control" type="text" name="totalOutput" value="{{ old('totalOutput') }}"></td>
                                 </tr>
                             </tbody>
 
                             <tbody>
                                 <tr>
                                     <td>Total Consuption This Quarter</td>
-                                    <td><input class="form-control" type="text" name="totalConsumption"></td>
+                                    <td><input class="form-control" type="text" name="totalConsumption" value="{{ old('totalConsumption') }}"></td>
                                     <td>Total Electric Consumption this Quarter (kwh)</td>
-                                    <td><input class="form-control" type="text" name="totalElectric"></td>
+                                    <td><input class="form-control" type="text" name="totalElectric" value="{{ old('totalElectric') }}"></td>
 
                                 </tr>
                             </tbody>
@@ -468,11 +501,12 @@
 </style>
 
 
-<!-- Script RA6969 -->
+
+<!-- Script RA9275 -->
 <script type="text/javascript">
     $("#dynamic-ar").click(function () { //button name
         $("#dynamicAddRemove").append(
-            '<tr><td></td><td></td><td><input class="form-control" type="text" name="dpno[]" " /><td><input class="form-control" type ="date" name="dpno[]" /><td><input class="form-control" type ="date" name="dpno[]" ></td>'
+            '<tr><td></td><td></td><td><input class="form-control" type="text" name="dpno[]" value="{{ old('dpno[]') }}"></td><td><input class="form-control" type ="date" name="dpno[]" value="{{ old('dpno[]') }}"></td><td><input class="form-control" type ="date" name="dpno[]" value="{{ old('dpno[]') }}"></td>'
 
         ); //table name
     });
@@ -575,6 +609,7 @@
         ); //table name
     });
 </script>
+
 
 
 @endsection

@@ -8,6 +8,7 @@ use App\Http\Controllers\ModuleSixController;
 use App\Http\Controllers\ModuleThreeController;
 use App\Http\Controllers\ModuleTwoController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +30,7 @@ Route::get('/radio', function () {
 
 /* Module One Controller */
 Route::get('/moduleOne', [ModuleOneController::class, 'index']);
+
 
 Route::get('/saveData', [ModuleOneController::class, 'save'])->name('layout.moduleOne');
 

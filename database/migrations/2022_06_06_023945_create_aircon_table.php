@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->integer('traineeID');
             $table->string('permit');
-            $table->date('dateIssued');
+            $table->date('dateIssued')->format('Y-m-d');
             $table->date('dateExpired');
             $table->timestamps();
         });

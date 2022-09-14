@@ -64,7 +64,7 @@ class ModuleOneController extends Controller
  *
  * @var string
  */
-protected $dateFormat = 'Y-m-d';
+
 
 
        public function save(Request $request){
@@ -80,7 +80,7 @@ protected $dateFormat = 'Y-m-d';
         $aircon  = new Aircon();
         $aircon->traineeID = $request->input('traineeID');
         $aircon->permit = $request->input('ACPermit');
-        $aircon->dateIssued = $request->input('ACIssued');
+        $aircon->dateIssued = $request->input('ACIssued')->format('Y-m-d');
         $aircon->dateExpired = $request->input('ACExpire');
         $aircon->save();
 
