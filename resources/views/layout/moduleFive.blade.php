@@ -248,7 +248,7 @@
 
                     </table>
                     <td></td>
-                    <td><button type="button" name="add" id="OECondition" class="btn btn-outline-primary mt-3">+</button></td>
+                    <td><button type="button" name="add" id="OECondition" class="btn btn-outline-primary mt-3" style="margin-left: 3.7%">+</button></td>
 
 
 
@@ -261,12 +261,14 @@
                         <tbody>
 
                             <tr>
+                                <td></td>
                                 <td style="text-align: center">Enhancement/ Mitigation Measures</td>
                                 <td style="text-align: center">Status of Compliance</td>
                                 <td style="text-align: center">Actions Taken</td>
                             </tr>
 
                             <tr>
+                                <td class="counterCell " style="text-align: right" ></td>
                                 <td><input class="form-control" type="text" name="evmpprogram[]"></td>
 
                                 <td style="text-align: center">
@@ -291,14 +293,14 @@
                                 <td><textarea class="form-control" type="text" name="evmpprogram[]"
                                         style="overflow:scroll; overflow: hidden visible;"></textarea></td>
 
-                                <td><button type="button" name="add" id="EMPlanProgram" class="btn btn-outline-primary"
-                                        style="float:right">+</button></td>
+
                             </tr>
 
                         </tbody>
 
                     </table>
-
+                    <td></td>
+                    <td><button type="button" name="add" id="EMPlanProgram" class="btn btn-outline-primary mt-3" style="margin-left: 3.7%">+</button></td>
                 </table>
 
                 <table class="table table-borderless table-hover">
@@ -369,7 +371,7 @@
 
             <tr>
                 <td><textarea class="form-control" type="text" name="description"
-                        style="overflow:scroll; overflow: hidden visible; width: 85%;"></textarea></td>
+                        style="overflow:scroll; overflow: hidden visible; width: 100%;"></textarea></td>
             </tr>
             </tbody>
 
@@ -461,7 +463,7 @@
     $("#AAQMonitoring").click(function () { //button name
         ++i;
         $("#AAQM").append(
-            ' <tr>                                <td><input class="form-control" type="text" name="aaqmonitoring[]"></td>                                <td><input class="form-control" type="date" name="aaqmonitoring[]"></td>                                <td><input class="form-control" type="text" name="aaqmonitoring[]"></td>                                <td><input class="form-control" type="text" name="aaqmonitoring[]"></td>                                <td><input class="form-control" type="text" name="aaqmonitoring[]"></td>                                <td><input class="form-control" type="text" name="aaqmonitoring[]"></td>                                <td><input class="form-control" type="text" name=" "></td>                                <td><input class="form-control" type="text" name=" "></td>                                <td><input class="form-control" type="text" name=" "></td>                                                          </tr>'
+            ' <tr><td><input class="form-control" type="text" name="aaqmonitoring[]"></td><td><input class="form-control" type="date" name="aaqmonitoring[]"></td><td><input class="form-control" type="text" name="aaqmonitoring[]"></td><td><input class="form-control" type="text" name="aaqmonitoring[]"></td><td><input class="form-control" type="text" name="aaqmonitoring[]"></td><td><input class="form-control" type="text" name="aaqmonitoring[]"></td><td><input class="form-control" type="text" name=" "></td><td><input class="form-control" type="text" name=" "></td><td><input class="form-control" type="text" name=" "></td></tr>'
         ); //table name
     });
 </script>
@@ -483,7 +485,7 @@
     $("#OECondition").click(function () { //button name
         ++i;
         $("#OEC").append(
-            ' <tr><td class="counterCell " style="text-align: right" ></td><td><input class="form-control" type="text" name="oecondition[]"></td><td style="text-align: center"><form action=""><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="oecondition[]"id="oecRadio1" value="Yes"><label class="form-check-label" for="oecRadio1"><p class="mt-3 mx-1">Yes</p></label></div><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="oecondition[]"id="oecRadio2" value="No"><label class="form-check-label" for="oecRadio2"><p class="mt-3 mx-1">No</p></label></div></form></td><td><textarea class="form-control" type="text" name="oecondition[]"style="overflow:scroll; overflow: hidden visible;"></textarea></td></tr>'
+            '<tr><td class="counterCell " style="text-align: right" ></td><td><input class="form-control" type="text" name="oecondition[]"></td><td style="text-align: center"><form action=""><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="oecondition[]"id="oecRadio1" value="Yes"><label class="form-check-label" for="oecRadio1"><p class="mt-3 mx-1">Yes</p></label></div><div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="oecondition[]"id="oecRadio2" value="No"><label class="form-check-label" for="oecRadio2"><p class="mt-3 mx-1">No</p></label></div></form></td><td><textarea class="form-control" type="text" name="oecondition[]"style="overflow:scroll; overflow: hidden visible;"></textarea></td></tr>'
         ); //table name
     });
 </script>
@@ -494,7 +496,7 @@
     $("#EMPlanProgram").click(function () { //button name
         ++i;
         $("#EMPP").append(
-            '<tr> <td><input class="form-control" type="text" name=" "></td> <td style="text-align: center"> <form action=""> <div class="form-check form-check-inline"> <input class="form-check-input" type="radio" name="inlineRadioOptions" id="emppRadio1" value="option1"> <label class="form-check-label" for="emppRadio1"><p class="mt-3 mx-1">Yes</p></label> </div> <div class="form-check form-check-inline"> <input class="form-check-input" type="radio" name="inlineRadioOptions" id="emppRadio2" value="option2"> <label class="form-check-label" for="emppRadio2"><p class="mt-3 mx-1">No</p></label> </div> </form> </td> <td><textarea class="form-control" type="text" name=" "  style="overflow:scroll; overflow: hidden visible;"></textarea></td> </tr>'
+            '<tr><td class="counterCell " style="text-align: right" ></td><td><input class="form-control" type="text" name=" "></td> <td style="text-align: center"> <form action=""> <div class="form-check form-check-inline"> <input class="form-check-input" type="radio" name="inlineRadioOptions" id="emppRadio1" value="option1"> <label class="form-check-label" for="emppRadio1"><p class="mt-3 mx-1">Yes</p></label> </div> <div class="form-check form-check-inline"> <input class="form-check-input" type="radio" name="inlineRadioOptions" id="emppRadio2" value="option2"> <label class="form-check-label" for="emppRadio2"><p class="mt-3 mx-1">No</p></label> </div> </form> </td> <td><textarea class="form-control" type="text" name=" "  style="overflow:scroll; overflow: hidden visible;"></textarea></td> </tr>'
         ); //table name
     });
 </script>
