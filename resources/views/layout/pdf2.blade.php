@@ -45,7 +45,7 @@ tr:nth-child(even) {
           </tr>
         </tbody>
 
-           
+
         <tbody>
         @foreach ($hwGeneration as $hwGen)
             <tr>
@@ -76,34 +76,34 @@ tr:nth-child(even) {
           <thead>
             <tr>
               <th>HW Details</th>
-             
+
 
             </tr>
           </thead>
-          
+
 </table>
 <table>
-<thead>  
+<thead>
 <tr>
     <th>HW No.</th>
     <th>HW Class</th>
     <th>Qty of HW Treated</th>
     <th>Unit</th>
     <th>TSD Locations</th>
-    
-    
+
+
 </tr>
           </thead>
           <tbody>
           @foreach ($hwDetails as $detail)
-            <tr>    
+            <tr>
                 <td>{{$detail->HWno}}</td>
                 <td>{{$detail->HWclass}}</td>
                 <td>{{$detail->QtyOfHWTreated}}</td>
                 <td>{{$detail->Unit}}</td>
                 <td>{{$detail->TSDLocation}}</td>
-                
-                
+
+
             </tr>
             @endforeach
           </tbody>
@@ -141,20 +141,20 @@ tr:nth-child(even) {
           <thead>
             <tr>
               <th>Transporter</th>
-             
+
 
             </tr>
           </thead>
-          
+
 </table>
 <table>
-<tbody>  
+<tbody>
 <tr>
     <td>ID</td>
     <td>Name</td>
     <td>Method</td>
     <td>Date</td>
-     
+
 </tr>
 </tbody>
 <tbody>
@@ -174,20 +174,20 @@ tr:nth-child(even) {
           <thead>
             <tr>
               <th>Treater</th>
-             
+
 
             </tr>
           </thead>
-          
+
 </table>
 <table>
-<tbody>  
+<tbody>
 <tr>
     <td>ID</td>
     <td>Name</td>
     <td>Method</td>
     <td>Date</td>
-     
+
 </tr>
 </tbody>
 <tbody>
@@ -207,20 +207,20 @@ tr:nth-child(even) {
           <thead>
             <tr>
               <th>Disposal</th>
-             
+
 
             </tr>
           </thead>
-          
+
 </table>
 <table>
-<tbody>  
+<tbody>
 <tr>
     <td>ID</td>
     <td>Name</td>
     <td>Method</td>
     <td>Date</td>
-     
+
 </tr>
 </tbody>
 <tbody>
@@ -268,7 +268,7 @@ tr:nth-child(even) {
 </table>
 
 
-            
+
 
 
 
