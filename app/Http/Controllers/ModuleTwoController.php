@@ -9,7 +9,7 @@ use App\Models\Osisa;
 use App\Models\Storage;
 use App\Models\Transporter;
 use App\Models\Treater;
-use Barryvdh\DomPDF\Facade\PDF as PDF;
+use PDF;
 use Illuminate\Http\Request;
 
 class ModuleTwoController extends Controller
@@ -105,7 +105,7 @@ class ModuleTwoController extends Controller
             return view('layout.moduleTwo');
     }
 
-    public function pdf(){
+    public function pdf (){
 
 
 

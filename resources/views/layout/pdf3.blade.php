@@ -230,8 +230,103 @@ tr:nth-child(even) {
                                         </tr>
                                         @endforeach
                                     </tbody>
-
-
                             </table>
 
-   
+                            <table>
+                                <h3 class="mt-3 mx-2 text-success">DETAILED REPORT OF WASTEWATER CHARACTERISTICS FOR OTHER POLLUTANTS</h3>
+                            </table>
+                                  <table>
+                                    <thead>
+                                        <tr>
+                                            
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th style="text-align: center">Name</th>
+                                            <th style="text-align: center">Name</th>
+                                            <th style="text-align: center">Name</th>
+                                            <th style="text-align: center">Name</th>   
+                                            <th style="text-align: center">Name</th>
+                                            <th style="text-align: center">Name</th>   
+                                          
+                                        </tr>
+                                    </thead>
+
+                            <tbody>
+                                @foreach ($drowcfop as $dro)
+                                <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td >{{$dro->name1}}</td>
+                                        <td>{{$dro->name2}}</td>
+                                        <td>{{$dro->name3}}</td>
+                                        <td>{{$dro->name4}}</td>
+                                        <td>{{$dro->name5}}</td>
+                                        <td>{{$dro->name6}}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                            <thead>
+                                        <tr>
+                                            
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th style="text-align: center">Unit</th>
+                                            <th style="text-align: center">Unit</th>
+                                            <th style="text-align: center">Unit</th>
+                                            <th style="text-align: center">Unit</th>   
+                                            <th style="text-align: center">Unit</th>
+                                            <th style="text-align: center">Unit</th>   
+                                          
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                @foreach ($drowcfop as $dro)
+                                <tr>
+                                        
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td >{{$dro->unit1}}</td>
+                                        <td>{{$dro->unit2}}</td>
+                                        <td>{{$dro->unit3}}</td>
+                                        <td>{{$dro->unit4}}</td>
+                                        <td>{{$dro->unit5}}</td>
+                                        <td>{{$dro->unit6}}</td>
+                                </tr>
+                                @endforeach
+                                    </tbody>
+
+                                    <thead>
+                                        <tr>
+                                            
+                                            <th style="text-align: center">Outlet No.</th>
+                                            <th style="text-align: center">Date</th>
+                                            <th style="text-align: center">Effluent Flow Rate (m3/day)</th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($drowcfop1 as $dro1)
+                                        <tr>
+                                            <td>{{$dro1->Outlet_No}}</td>
+                                            <td>{{$dro1->Date}}</td>
+                                            <td>{{$dro1->Effluent_Flow_Rate_m3_day}}</td>
+                                            <td>{{$dro1->value1}}</td>
+                                            <td>{{$dro1->value2}}</td>
+                                            <td>{{$dro1->value3}}</td>
+                                            <td>{{$dro1->value4}}</td>
+                                            <td>{{$dro1->value5}}</td>
+                                            <td>{{$dro1->value6}}</td>
+                                            
+                                        </tr>
+                                        @endforeach
+                                    </tbody>

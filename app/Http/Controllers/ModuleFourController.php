@@ -16,7 +16,7 @@ use App\Models\Total_Consumption_of_Water;
 use App\Models\Total_Cost_of_Chemicals_used;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Barryvdh\DomPDF\Facade\PDF as PDF;
+use PDF;
 
 class ModuleFourController extends Controller
 {

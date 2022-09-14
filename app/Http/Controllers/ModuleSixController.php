@@ -6,7 +6,7 @@ use App\Models\AccidentRecord;
 use App\Models\PersonelStaff;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Barryvdh\DomPDF\Facade\PDF as PDF;
+use PDF;
 
 class ModuleSixController extends Controller
 {

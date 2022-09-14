@@ -8,13 +8,15 @@ use App\Models\CostOfNew;
 use App\Models\CostOfOperating;
 use App\Models\DischargeLocation;
 use App\Models\DreportofWaste;
+use App\Models\Drowcfop;
+use App\Models\Drowcfop1;
 use App\Models\NewInvestment;
 use App\Models\PersonEmployed;
 use App\Models\PersonEmployedCost;
 use App\Models\UtilityCost;
 use App\Models\WaterPolutionData;
 use Illuminate\Http\Request;
-use Barryvdh\DomPDF\Facade\PDF as PDF;
+use PDF;
 
 class ModuleThreeController extends Controller
 {
@@ -31,12 +33,18 @@ class ModuleThreeController extends Controller
         $costofnew = CostOfNew::all();
         $dischargeLocation = DischargeLocation::all();
         $dreportofwaste = DreportofWaste::all();
+        $drowcfop = Drowcfop::all();
+        $drowcfop1 = Drowcfop1::all();
+        
+    
 
 
         return view('layout.moduleThree');
         -with(['waterpolutiondata'=>$waterpolutiondata,'personEmployed'=>$personEmployed,'personEmployedCost'=>$personEmployedCost,
         'costofchemical'=>$costofchemical,'utilitycost'=>$utilitycost,'administrativecosts'=>$administrativecosts,'costofoperating'=>$costofoperating,
-        'newinvestment'=>$newinvestment,'costofnew'=>$costofnew,'dischargeLocation'=>$dischargeLocation,'dreportofwaste'=>$dreportofwaste
+        'newinvestment'=>$newinvestment,'costofnew'=>$costofnew,'dischargeLocation'=>$dischargeLocation,'dreportofwaste'=>$dreportofwaste,'drowcfop'=>$drowcfop,
+        'drowcfop1'=>$drowcfop1
+       
     ]);
     }
 
@@ -137,6 +145,40 @@ class ModuleThreeController extends Controller
             $DBdreportofwaste->save();
         }
 
+        $drowcfop = new Drowcfop();
+        $drowcfop->name1 = $request->input('name1');
+        $drowcfop->name2 = $request->input('name2');
+        $drowcfop->name3 = $request->input('name3');
+        $drowcfop->name4 = $request->input('name4');
+        $drowcfop->name5 = $request->input('name5');
+        $drowcfop->name6 = $request->input('name6');
+        $drowcfop->unit1 = $request->input('unit1');
+        $drowcfop->unit2 = $request->input('unit2');
+        $drowcfop->unit3 = $request->input('unit3');
+        $drowcfop->unit4 = $request->input('unit4');
+        $drowcfop->unit5 = $request->input('unit5');
+        $drowcfop->unit6 = $request->input('unit6');
+       
+        $drowcfop->save();
+
+
+        
+        $drowcfop1 = $request->input('drowcfop1');
+        for ($x=0; $x<count($drowcfop1); $x+=9 ){
+            $DBdrowcfop1 = new Drowcfop1();
+            $DBdrowcfop1->Outlet_No = $drowcfop1[$x];
+            $DBdrowcfop1->Date = $drowcfop1[$x+1];
+            $DBdrowcfop1->Effluent_Flow_Rate_m3_day = $drowcfop1[$x+2];
+            $DBdrowcfop1->value1 = $drowcfop1[$x+3];
+            $DBdrowcfop1->value2 = $drowcfop1[$x+4];
+            $DBdrowcfop1->value3 = $drowcfop1[$x+5];
+            $DBdrowcfop1->value4 = $drowcfop1[$x+6];
+            $DBdrowcfop1->value5 = $drowcfop1[$x+7];
+            $DBdrowcfop1->value6 = $drowcfop1[$x+8];
+
+            $DBdrowcfop1->save();
+            
+        }
 
 
         return redirect('/moduleThree');
@@ -155,11 +197,14 @@ class ModuleThreeController extends Controller
             $costofnew = CostOfNew::get();
             $dischargeLocation = DischargeLocation::get();
             $dreportofwaste = DreportofWaste::get();
-            $customPaper = array(0,0,800.05,900.100);
+            $drowcfop = Drowcfop::get();
+            $drowcfop1 = Drowcfop1::get();
+
+            $customPaper = array(0,0,800.00,800.90);
             $pdf = PDF::loadview('layout.pdf3',['waterpolutiondata'=>$waterpolutiondata,'personEmployed'=>$personEmployed,
             'personEmployedCost'=>$personEmployedCost,'costofchemical'=>$costofchemical,'utilitycost'=>$utilitycost,'administrativecosts'=>$administrativecosts,
             'costofoperating'=>$costofoperating,'newinvestment'=>$newinvestment,'costofnew'=>$costofnew,'dischargeLocation'=>$dischargeLocation,
-            'dreportofwaste'=>$dreportofwaste
+            'dreportofwaste'=>$dreportofwaste,'drowcfop'=>$drowcfop,'drowcfop1'=>$drowcfop1
 
 
             ])->setPaper($customPaper,'A4');

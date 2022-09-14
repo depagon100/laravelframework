@@ -22,11 +22,7 @@ use App\Models\Smallquan;
 use App\Models\TransporterReg;
 use App\Models\Tsdreg;
 use Illuminate\Http\Request;
-use Barryvdh\DomPDF\Facade\PDF as PDF;
-use Carbon\Carbon;
-
-
-
+use PDF;
 
 class ModuleOneController extends Controller
 {
@@ -59,31 +55,24 @@ class ModuleOneController extends Controller
       ]);
 
        }
-/**
- * The storage format of the model's date columns.
- *
- * @var string
- */
-
-
 
        public function save(Request $request){
 
-
-
+         
+         
         $gic = new Gic();
         $gic->traineeID = $request->input('traineeID');
         $gic->description = $request->input('description');
         $gic->save();
 
-
+       
         $aircon  = new Aircon();
         $aircon->traineeID = $request->input('traineeID');
         $aircon->permit = $request->input('ACPermit');
-        $aircon->dateIssued = $request->input('ACIssued')->format('Y-m-d');
+        $aircon->dateIssued = $request->input('ACIssued');
         $aircon->dateExpired = $request->input('ACExpire');
         $aircon->save();
-
+     
 
         $denrid  = new Denrid();
         $denrid->traineeID = $request->input('traineeID');
@@ -150,8 +139,8 @@ class ModuleOneController extends Controller
           $DBcncno->dateExpired = $cncno[$x+2];
           $DBcncno->save();
       }
-
-
+      
+      
       $ccoreg = $request->input('ccoreg');
       for ($x=0; $x<count($ccoreg); $x+=3){
          $DBccoreg = new Ccoreg();
@@ -237,11 +226,9 @@ class ModuleOneController extends Controller
          $DBpono->save();
 
       }
-
+     
         return redirect('moduleOne');
        }
-
-
 
        public function pdf(){
 
@@ -266,13 +253,11 @@ class ModuleOneController extends Controller
          $pdf = PDF::loadView('layout.pdf1' , ['gic'=>$gic,'aircon'=>$aircon,'dpno'=>$dpno,'cncno'=>$cncno,'denrid'=>$denrid,
          'transporterReg'=>$transporterReg,'tsdreg'=>$tsdreg,'ccoreg'=>$ccoreg,'import'=>$import,'permit'=>$permit,'smallquan'=>$smallquan,
          'priority'=>$priority,'piccs'=>$piccs,'pmpin'=>$pmpin,'acno'=>$acno,'pono'=>$pono,'operation'=>$operation,'production'=>$production
-
+      
       ]);
 
-            return $pdf->download('moduleOne.pdf');
+            return $pdf->download('moduleOne.pdf1'); 
        }
-
-
 
 
 }
